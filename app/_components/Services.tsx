@@ -16,7 +16,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, head, para }) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       
-      className="flex gap-12 flex-col rotateDiv"
+      className="flex gap-12 flex-col rotateDiv lg:items-start items-center"
     >
       <div className="relative w-fit">
         <div className="border border-blue-500/30 p-10 w-fit rotateBox bg-slate-900/40">
@@ -26,8 +26,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, head, para }) => {
         </div>
       </div>
       <div className="space-y-3">
-        <h2 className="text-white font-black text-xl md:text-2xl uppercase tracking-tighter leading-none">{head}</h2>
-        <p className="font-mono text-[11px] text-slate-500 uppercase tracking-widest leading-relaxed max-w-xs">
+        <h2 className="text-white font-black text-xl md:text-2xl text-center lg:text-start uppercase tracking-tighter leading-none">{head}</h2>
+        <p className="font-mono text-center lg:text-start text-[11px] text-slate-500 uppercase tracking-widest leading-relaxed max-w-xs">
           {para}
         </p>
       </div>
@@ -43,28 +43,27 @@ const Services = () => {
       <span className="w-full bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop')] bg-center bg-cover absolute inset-0 -z-10 -scale-x-100 opacity-[0.04]"></span>
       <span className="w-full bg-linear-to-b from-slate-950 via-slate-950/80 to-slate-950 absolute inset-0 z-0"></span>
 
-      <div className="mx-auto px-6 md:px-10 gap-20 lg:gap-6 flex w-full justify-between flex-col lg:flex-row z-20 items-start">
+      <div className="mx-auto px-6 md:px-10 gap-20 lg:gap-6 flex w-full justify-between flex-col lg:flex-row z-20 items-center lg:items-start">
         {/* Left Section: Manifesto */}
-        <div className="flex flex-col items-center justify-center my-auto w-fit gap-10">
+        <div className="flex flex-col items-center justify-center m-auto w-fit gap-10">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             
           >
-            <h2 className="text-xs font-mono w-fit border-b border-blue-500 text-blue-500 tracking-[0.5em] uppercase mb-4 pb-2">Architecture Manifesto</h2>
-            <h2 className="text-white text-5xl md:text-6xl font-black w-fit leading-none tracking-tighter mb-6">
+            <h2 className="text-xs m-auto text-center lg:text-start font-mono w-fit border-b border-blue-500 text-blue-500 tracking-[0.5em] uppercase mb-4 pb-2">Architecture Manifesto</h2>
+            <h2 className="text-white text-center lg:text-start m-auto text-5xl md:text-6xl font-black w-fit leading-none tracking-tighter mb-6">
               SYSTEM<br />INTEGRATION.
             </h2>
-            <p className="text-slate-400 max-w-sm  text-lg leading-relaxed mb-8">
+            <p className="text-slate-400 text-center lg:text-start max-w-sm m-auto text-lg leading-relaxed mb-8">
               From distributed backends to autonomous AI reasoning modules, I engineer the digital infrastructure that powers the future.
             </p>
-            <a
-              href="#projects"
-              className="group inline-flex items-center space-x-4 bg-white text-slate-950 px-10 py-5 font-black uppercase tracking-widest text-[10px] transition-all hover:bg-blue-600 hover:text-white"
+            <button
+              className="m-auto w-fit flex items-center space-x-4 bg-white text-slate-950 px-10 py-5 font-black uppercase tracking-widest text-[10px] transition-all hover:bg-blue-600 hover:text-white"
             >
               <span>Access Repositories</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-            </a>
+            </button>
           </motion.div>
         </div>
 

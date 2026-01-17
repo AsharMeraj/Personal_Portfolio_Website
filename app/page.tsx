@@ -6,6 +6,7 @@ import Navbar from './_components/Navbar';
 import Hero from './_components/Hero';
 import Services from './_components/Services';
 import Skills from './_components/Skills';
+import Projects from './_components/Projects';
 // import SkillsGrid from './components/SkillsGrid.tsx';
 // import Projects from './components/Projects.tsx';
 // import Experience from './components/Experience.tsx';
@@ -23,6 +24,8 @@ const App: React.FC = () => {
        <Services/>
 
         <Skills/>
+
+        <Projects/>
       </main>
 
       <footer className="py-16 border-t border-white/5 bg-slate-950 text-center">

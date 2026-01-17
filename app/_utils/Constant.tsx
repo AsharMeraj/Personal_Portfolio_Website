@@ -14,7 +14,7 @@ import {
   Server,
   Terminal
 } from 'lucide-react';
-import { Project, Experience } from './types';
+import { Project, Experience, Service } from './types';
 
 export const SKILLS = [
   // Frontend
@@ -43,7 +43,7 @@ export const SKILLS = [
   { name: 'Deployment', category: 'other', icon: <Globe className="w-5 h-5" /> },
 ];
 
-export const PROJECTS: Project[] = [
+export const SERVICE: Service[] = [
   {
     title: "AI-Powered CRM System",
     description: "Built a complete CRM with Agentic AI modules for automated lead qualification and task prioritization using Vector Databases for semantic search.",
@@ -84,5 +84,40 @@ export const EXPERIENCES: Experience[] = [
       "Implemented responsive UIs with Tailwind CSS and advanced Framer Motion animations.",
       "Optimized SQL queries in PostgreSQL resulting in 25% faster data retrieval."
     ]
+  }
+];
+
+
+
+export const PROJECT: Project[] = [
+  {
+    id: "PRJ-001",
+    title: "NeuroCore AI",
+    category: "AGENTIC SYSTEMS",
+    description: "A distributed autonomous agent network built on Next.js 15, utilizing Gemini 2.5 for complex task reasoning and multi-step planning.",
+    tags: ["Next.js", "Gemini API", "Pinecone", "Drizzle"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+    github: "#",
+    live: "#"
+  },
+  {
+    id: "PRJ-002",
+    title: "Vortex Analytics",
+    category: "DATA INFRASTRUCTURE",
+    description: "Real-time data visualization platform processing millions of events per second with high-scale vector optimization.",
+    tags: ["React", "TypeScript", "Neon DB", "Inngest"],
+    image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop",
+    github: "#",
+    live: "#"
+  },
+  {
+    id: "PRJ-003",
+    title: "Quantum Bridge",
+    category: "SYSTEM ARCHITECTURE",
+    description: "Cloud-native infrastructure management tool for orchestrating microservices across multi-region hybrid environments.",
+    tags: ["Go", "Node.js", "Docker", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+    github: "#",
+    live: "#"
   }
 ];

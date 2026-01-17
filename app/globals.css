@@ -93,7 +93,8 @@ h4 {
   }
 }
 
-@keyframes pulse-flow {
+
+@keyframes animate-pulse-flow {
   0% {
     stroke-dashoffset: 100;
   }
@@ -102,9 +103,8 @@ h4 {
     stroke-dashoffset: 0;
   }
 }
-
 .animate-pulse-flow {
-  animation: pulse-flow 3s linear infinite;
+  animation: animate-pulse-flow 3s linear infinite;
 }
 
 .rotateBox {

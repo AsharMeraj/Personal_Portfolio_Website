@@ -13,7 +13,7 @@ import Skills from './_components/Skills';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen selection:bg-blue-500/30 bg-slate-950">
+    <div className="min-h-screen m-auto selection:bg-blue-500/30 bg-slate-950 ">
       <Navbar />
       
       <main>

@@ -51,15 +51,15 @@ const Services = () => {
             whileInView={{ opacity: 1, x: 0 }}
             
           >
-            <h2 className="text-xs m-auto text-center lg:text-start font-mono w-fit border-b border-blue-500 text-blue-500 tracking-[0.5em] uppercase mb-4 pb-2">Architecture Manifesto</h2>
+            <h2 className="text-xs m-auto lg:m-0 text-center lg:text-start font-mono w-fit border-b border-blue-500 text-blue-500 tracking-[0.5em] uppercase mb-4 pb-2">Architecture Manifesto</h2>
             <h2 className="text-white text-center lg:text-start m-auto text-5xl md:text-6xl font-black w-fit leading-none tracking-tighter mb-6">
               SYSTEM<br />INTEGRATION.
             </h2>
-            <p className="text-slate-400 text-center lg:text-start max-w-sm m-auto text-lg leading-relaxed mb-8">
+            <p className="text-slate-400 text-center lg:text-start max-w-sm m-auto lg:m-0 text-lg leading-relaxed mb-8">
               From distributed backends to autonomous AI reasoning modules, I engineer the digital infrastructure that powers the future.
             </p>
             <button
-              className="m-auto w-fit flex items-center space-x-4 bg-white text-slate-950 px-10 py-5 font-black uppercase tracking-widest text-[10px] transition-all hover:bg-blue-600 hover:text-white"
+              className="m-auto lg:m-0 w-fit flex items-center space-x-4 bg-white text-slate-950 px-10 py-5 font-black uppercase tracking-widest text-[10px] transition-all hover:bg-blue-600 hover:text-white"
             >
               <span>Access Repositories</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
@@ -68,7 +68,7 @@ const Services = () => {
         </div>
 
         {/* Right Section: Modular Grid */}
-        <div className="grid sm:grid-cols-2 gap-20 lg:gap-x-6 lg:gap-y-24">
+        <div className="grid sm:grid-cols-2 gap-20 lg:gap-x-6 lg:gap-y-6">
           <ServiceCard
             icon={<BrainCircuit className="w-8 h-8" />}
             head="Agentic AI Systems"

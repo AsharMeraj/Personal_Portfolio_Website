@@ -4,6 +4,16 @@ export interface Skill {
   category: 'frontend' | 'backend' | 'ai' | 'database' | 'other';
 }
 
+export interface EducationEntry {
+  id: string;
+  degree: string;
+  institution: string;
+  period: string;
+  location: string;
+  description: string;
+  highlights: string[];
+}
+
 export interface Service {
   title: string;
   description: string;

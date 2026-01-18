@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { ExternalLink, Github, Code2, Layers } from 'lucide-react';
+import { ExternalLink, Github, Code2, Layers, ArrowRight } from 'lucide-react';
 import ProjectCards, { containerVariants } from './ProjectCards';
 import { PROJECT } from '../_utils/Constant';
 import MarginWrapper from './MarginWrapper';
@@ -10,9 +9,9 @@ import MarginWrapper from './MarginWrapper';
 const Projects = () => {
     return (
         <MarginWrapper>
-            <section id="projects" className="relative py-24 md:py-48 px-6 bg-slate-950">
+            <section id="projects" className="relative bg-slate-950">
                 <div className="mx-auto">
-                    <div className="mb-10">
+                    <div className="mb-10 flex justify-between items-center">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -26,13 +25,22 @@ const Projects = () => {
                                 SYSTEM<br /><span className="gradient-text">BLUEPRINTS.</span>
                             </h2>
                         </motion.div>
+                        <a
+                            href="/projects"
+                            className="group flex h-fit items-center space-x-4 border border-blue-500/30 bg-slate-900/40 px-8 py-4 text-white font-bold uppercase tracking-widest text-[11px] hover:bg-blue-600/10 hover:border-blue-500 transition-all active:scale-95"
+                        >
+                            <span>Explore All Repositories</span>
+                            <div className="bg-blue-500/20 p-2 rounded group-hover:bg-blue-500/40 transition-colors">
+                                <ArrowRight className="w-4 h-4 text-blue-400" />
+                            </div>
+                        </a>
                     </div>
 
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
+                        viewport={{ margin: "-50px" }}
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                     >
                         {PROJECT.map((p) => (

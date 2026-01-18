@@ -33,10 +33,10 @@ const Education = () => {
                             viewport={{ once: true }}
                             className="space-y-4"
                         >
-                            <h2 className="text-xs font-mono text-blue-500 tracking-[0.5em] uppercase border-l-2 border-blue-500 pl-4">
+                            <h2 className="text-xs w-fit m-auto mb-4 whitespace-nowrap lg:m-0 font-mono text-blue-500 tracking-[0.2rem] uppercase border-l-2 border-blue-500 pl-4">
                                 Registry // Academic_Logs
                             </h2>
-                            <h2 className="text-5xl md:text-6xl font-black text-white tracking-tighter uppercase leading-none">
+                            <h2 className="text-5xl md:text-6xl m-auto mb-4 lg:m-0 lg:text-start text-center font-black text-white tracking-tighter uppercase leading-none">
                                 SYSTEM<br /><span className="gradient-text">EVOLUTION.</span>
                             </h2>
                         </motion.div>

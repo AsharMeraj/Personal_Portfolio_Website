@@ -7,6 +7,7 @@ import Hero from './_components/Hero';
 import Services from './_components/Services';
 import Skills from './_components/Skills';
 import Projects from './_components/Projects';
+import Education from './_components/Education';
 // import SkillsGrid from './components/SkillsGrid.tsx';
 // import Projects from './components/Projects.tsx';
 // import Experience from './components/Experience.tsx';
@@ -22,6 +23,8 @@ const App: React.FC = () => {
         
         {/* REINVENTED ABOUT/SERVICES SECTION */}
        <Services/>
+
+        <Education/>
 
         <Skills/>
 

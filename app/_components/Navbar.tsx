@@ -23,8 +23,8 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <MarginWrapper>
-      <nav className={`2xl:max-w-7xl max-w-6xl m-auto fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
+
+      <nav className={`max-w-7xl m-auto fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
         <div className={`mx-auto px-6 flex justify-between items-center transition-all ${scrolled ? 'bg-slate-950/90 backdrop-blur-xl border border-blue-500/30 py-4 rounded-xl mx-4 px-8 shadow-2xl' : 'border-slate-950/90'}`}>
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -89,7 +89,6 @@ const Navbar: React.FC = () => {
           )}
         </AnimatePresence>
       </nav>
-    </MarginWrapper>
   );
 };
 

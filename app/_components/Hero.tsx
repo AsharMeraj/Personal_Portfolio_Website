@@ -35,12 +35,11 @@ const TypingText: React.FC<{ text: string; delay?: number }> = ({ text, delay = 
 
 const Hero: React.FC = () => {
   return (
-    <MarginWrapper>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
+      <section className="relative px-10 max-w-7xl w-fit m-auto pb-10 pt-32 md:py-20 md:pt-40 lg:pt-55 flex items-center justify-center overflow-hidden">
         <div className="floating-blob top-1/4 -left-20 opacity-10" />
         <div className="floating-blob bottom-1/4 -right-20 opacity-10" style={{ animationDelay: '1.5s' }} />
 
-        <div className="mx-auto px-6 md:px-10 w-full z-10">
+        <div className="mx-auto w-full z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
             {/* LEFT COLUMN: Professional Image */}
@@ -51,7 +50,7 @@ const Hero: React.FC = () => {
               className="relative order-2 lg:order-1"
             >
               <div className="relative z-10 w-full max-w-md mx-auto aspect-4/5 bg-slate-900 rounded-3xl border border-blue-500/20 overflow-hidden shadow-2xl lg:block hidden">
-                <Image src={Pic} alt='/' className="grayscale w-full h-full object-cover  hover:grayscale-0 transition-all duration-1000" />
+                <Image src={Pic} alt='/' className="w-full h-full object-cover  hover:grayscale-0 transition-all duration-1000" />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950 to-transparent opacity-60 pointer-events-none" />
 
               </div>
@@ -92,7 +91,7 @@ const Hero: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="mb-8"
               >
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-4">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-4">
                   <span className="block text-white">SOFTWARE</span>
                   <span className="gradient-text block">ENGINEER.</span>
                 </h1>
@@ -138,7 +137,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </section>
-    </MarginWrapper>
   );
 };
 

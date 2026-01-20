@@ -49,7 +49,7 @@ export default function ProjectCards({project}: {project: Project}) {
         <div className="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         
         {/* Scanner Line */}
-        <div className="absolute top-0 left-0 w-full h-[2px] bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)] opacity-0 group-hover:animate-scanner pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-0.5 bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)] opacity-0 group-hover:animate-scanner pointer-events-none" />
         
         <div className="absolute bottom-4 left-4 flex gap-2">
           {project.tags.map(tag => (

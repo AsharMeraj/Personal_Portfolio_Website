@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="mb-8"
               >
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-none mb-4">
                   <span className="block text-white">SOFTWARE</span>
                   <span className="gradient-text block">ENGINEER.</span>
                 </h1>

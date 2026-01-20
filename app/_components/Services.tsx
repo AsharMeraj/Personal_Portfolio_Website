@@ -54,7 +54,7 @@ const Services = () => {
             >
               <div className='flex flex-col gap-3'>
                 <h2 className="text-xs text-center lg:text-start font-mono w-fit lg:m-0 m-auto border-b border-blue-500 text-blue-500 tracking-[0.5em] uppercasepb-2">Architecture Manifesto</h2>
-                <h2 className="text-white text-center lg:text-start m-auto text-5xl md:text-6xl font-black w-fit leading-none tracking-tighter">
+                <h2 className="text-white text-center lg:text-start m-auto text-4xl md:text-6xl lg:text-7xl font-black w-fit leading-none tracking-tighter">
                   SYSTEM<br />INTEGRATION.
                 </h2>
               </div>

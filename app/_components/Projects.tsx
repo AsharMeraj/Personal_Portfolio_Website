@@ -21,7 +21,7 @@ const Projects = () => {
                             <h2 className="text-xs text-center md:text-start w-fit md:m-0 m-auto font-mono text-blue-500 tracking-[0.5em] uppercase border-l-2 border-blue-500 pl-4">
                                 Project Index 01
                             </h2>
-                            <h2 className="text-5xl text-center md:text-start md:text-6xl font-black text-white tracking-tighter uppercase mt-4">
+                            <h2 className="text-4xl md:text-6xl lg:text-7xl text-center md:text-start font-black text-white tracking-tighter uppercase mt-4">
                                 SYSTEM<br /><span className="gradient-text">BLUEPRINTS.</span>
                             </h2>
                         </motion.div>

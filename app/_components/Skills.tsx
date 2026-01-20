@@ -42,7 +42,7 @@ const Skills = () => {
                             initial={{ opacity: 0, y: -10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             
-                            className='text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase mb-2'
+                            className='text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase mb-2'
                         >
                             Capabilities<span className="text-blue-500">_</span>
                         </motion.h2>

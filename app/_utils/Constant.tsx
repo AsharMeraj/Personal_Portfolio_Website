@@ -123,32 +123,32 @@ export const EXPERIENCES: Experience[] = [
 export const PROJECT: Project[] = [
   {
     id: "PRJ-001",
-    title: "NeuroCore AI",
+    title: "JARVIS",
     category: "AGENTIC SYSTEMS",
-    description: "A distributed autonomous agent network built on Next.js 15, utilizing Gemini 2.5 for complex task reasoning and multi-step planning.",
-    tags: ["Next.js", "Gemini API", "Pinecone", "Drizzle"],
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+    description: "A distributed autonomous agent network built on Next.js 16, utilizing Gemini 2.5 audio preview for complex task reasoning and multi-step planning.",
+    tags: ["Next.js", "Gemini API", "Drizzle"],
+    image: "/jarvis.png",
     github: "#",
-    live: "#"
+    live: "https://jarvis-asharmeraj.vercel.app"
   },
   {
     id: "PRJ-002",
-    title: "Vortex Analytics",
-    category: "DATA INFRASTRUCTURE",
+    title: "MyVitals",
+    category: "Medical System",
     description: "Real-time data visualization platform processing millions of events per second with high-scale vector optimization.",
     tags: ["React", "TypeScript", "Neon DB", "Inngest"],
-    image: "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop",
+    image: "/myvitals2.png",
     github: "#",
     live: "#"
   },
   {
     id: "PRJ-003",
-    title: "Quantum Bridge",
+    title: "EZCounselling",
     category: "SYSTEM ARCHITECTURE",
     description: "Cloud-native infrastructure management tool for orchestrating microservices across multi-region hybrid environments.",
     tags: ["Go", "Node.js", "Docker", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+    image: "/counselling.png",
     github: "#",
-    live: "#"
+    live: "https://counselling-app-scree-git-352ccb-ashar-merajs-projects-60e64089.vercel.app/"
   }
 ];

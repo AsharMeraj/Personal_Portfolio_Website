@@ -66,7 +66,7 @@ const Skills = () => {
 
                     {/* Animated SVG Path */}
                     <div className="relative">
-                        <svg className="max-w-4xl w-full m-auto md:px-20 -mt-2 opacity-40"
+                        <svg className="max-w-4xl w-full m-auto md:px-20  opacity-40"
                             xmlns="http://www.w3.org/2000/svg"
                             width="744" height="323"
                             viewBox="0 0 744 323"
@@ -98,7 +98,7 @@ const Skills = () => {
                                 </linearGradient>
                             </defs>
                         </svg>
-                        <div className='z-20 -mt-20 min-[500px]:-mt-32 sm:-mt-40'>
+                        <div className='z-20 -mt-20 min-[500px]:-mt-32 sm:-mt-45'>
                             <motion.main
                                 variants={containerVariants}
                                 initial="hidden"
@@ -123,9 +123,13 @@ const Skills = () => {
                                 <div className='flex flex-wrap gap-4 justify-center md:justify-end content-start'>
                                     <SkillsCard name='Gemini Ai' />
                                     <SkillsCard name='OpenAi' />
+                                    <SkillsCard name='Python' />
                                     <SkillsCard name='Postgres' />
+                                    <SkillsCard name='MongoDb' />
                                     <SkillsCard name='Drizzle ORM' />
                                     <SkillsCard name='Inngest' />
+                                    <SkillsCard name='Electron' />
+                
                                 </div>
                             </motion.main>
 
@@ -135,13 +139,14 @@ const Skills = () => {
                                 initial="hidden"
                                 whileInView="visible"
                                 
-                                className='w-full flex flex-wrap justify-center mt-12 md:mt-20 gap-4 px-6'
+                                className='w-full flex flex-wrap justify-center mt-12 gap-4 px-6'
                             >
                                 <SkillsCard name='Generative Ai' />
                                 <SkillsCard name='Fullstack Architecture' />
                                 <SkillsCard name='Cloud Infrastructure' />
                                 <SkillsCard name='Web Animation' />
                                 <SkillsCard name='3D Implementation' />
+                                <SkillsCard name='IoT Integration' />
                             </motion.main>
                         </div>
                     </div>

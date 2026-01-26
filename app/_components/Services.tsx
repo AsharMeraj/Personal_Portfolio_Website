@@ -26,7 +26,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, head, para }) => {
         </div>
       </div>
       <div className="space-y-3">
-        <h2 className="text-white font-black text-xl md:text-2xl text-center lg:text-start uppercase tracking-tighter leading-none">{head}</h2>
+        <h2 className="text-white font-black text-xl text-center lg:text-start uppercase tracking-tighter leading-none">{head}</h2>
         <p className="font-mono text-center lg:text-start text-[11px] text-slate-500 uppercase tracking-widest leading-relaxed max-w-xs">
           {para}
         </p>
@@ -79,8 +79,8 @@ const Services = () => {
             />
             <ServiceCard
               icon={<Database className="w-8 h-8" />}
-              head="Vector Optimization"
-              para="Architecting high-dimensional data layers with Neon DB and Pinecone for semantic search and RAG pipelines."
+              head="Full-Stack Engineering"
+              para="From initial architecture to final deployment, we engineer high-performance web applications designed to scale with your vision."
             />
             <ServiceCard
               icon={<Layers className="w-8 h-8" />}
@@ -89,8 +89,8 @@ const Services = () => {
             />
             <ServiceCard
               icon={<Smartphone className="w-8 h-8" />}
-              head="Mobile Bridge UI"
-              para="Bridging complex web dashboards into native Android experiences using optimized performance wrappers."
+              head="Native Hybrid Deployment"
+              para="Transforming complex web ecosystems into high-performance Android applications with seamless native integration and offline capabilities."
             />
           </div>
         </div>

@@ -103,9 +103,9 @@ h4 {
     stroke-dashoffset: 0;
   }
 }
-.animate-pulse-flow {
+/* .animate-pulse-flow {
   animation: animate-pulse-flow 3s linear infinite;
-}
+} */
 
 .rotateBox {
   transform: rotate(45deg);

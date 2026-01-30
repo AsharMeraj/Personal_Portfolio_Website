@@ -26,7 +26,7 @@ const Projects = () => {
                             </h2>
                         </motion.div>
                         <a
-                            href="/projects"
+                            href="/work"
                             className="group flex h-fit items-center space-x-4 border border-blue-500/30 bg-slate-900/40 px-8 py-4 text-white font-bold uppercase tracking-widest text-[11px] hover:bg-blue-600/10 hover:border-blue-500 transition-all active:scale-95"
                         >
                             <span>Explore All Repositories</span>
@@ -41,9 +41,9 @@ const Projects = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ margin: "-50px" }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
                     >
-                        {PROJECT.map((p) => (
+                        {PROJECT.slice(0, 3).map((p) => (
                             <ProjectCards key={p.id} project={p} />
                         ))}
                     </motion.div>

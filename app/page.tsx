@@ -8,20 +8,14 @@ import Services from './_components/Services';
 import Skills from './_components/Skills';
 import Projects from './_components/Projects';
 import Education from './_components/Education';
-// import SkillsGrid from './components/SkillsGrid.tsx';
-// import Projects from './components/Projects.tsx';
-// import Experience from './components/Experience.tsx';
-// import Contact from './components/Contact.tsx';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen m-auto selection:bg-blue-500/30 bg-slate-950 ">
-      <Navbar />
+    <div>
       
       <main>
         <Hero />
         
-        {/* REINVENTED ABOUT/SERVICES SECTION */}
        <Services/>
 
         <Education/>

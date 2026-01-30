@@ -46,12 +46,12 @@ export default function ProjectCards({project}: {project: Project}) {
           alt={project.title} 
           className="w-full h-full transition-transform duration-700 group-hover:scale-105 group-hover:grayscale-0"
         />
-        <div className="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-500" />
         
         {/* Scanner Line */}
         <div className="absolute top-0 left-0 w-full h-0.5 bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)] opacity-0 group-hover:animate-scanner pointer-events-none" />
         
-        <div className="absolute bottom-2 left-4 flex gap-2">
+        <div className="absolute bottom-2 left-4 flex gap-6">
           {project.tags.map(tag => (
             <span key={tag} className="px-2 py-1 bg-slate-950/80 backdrop-blur-md text-[9px] font-mono text-blue-400 border border-blue-500/20">
               0x_{tag}

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Terminal, Activity } from 'lucide-react';
 import MarginWrapper from './MarginWrapper';
+import { navLinks } from '../_utils/Constant';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,14 +14,6 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: 'ABOUT', href: '#about' },
-    { name: 'STACK', href: '#skills' },
-    { name: 'PROJECTS', href: '#projects' },
-    { name: 'HISTORY', href: '#experience' },
-    { name: 'CONTACT', href: '#contact' },
-  ];
 
   return (
 

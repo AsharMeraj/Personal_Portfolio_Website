@@ -48,18 +48,6 @@ const Projects = () => {
                         ))}
                     </motion.div>
 
-                    {/* Technical Label */}
-                    <div className="mt-20 flex justify-center">
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 0.3 }}
-                            className="flex items-center gap-8 font-mono text-[9px] tracking-[0.4em] uppercase text-slate-600"
-                        >
-                            <div className="w-20 h-px bg-slate-800" />
-                            <span>End of Primary Repository</span>
-                            <div className="w-20 h-px bg-slate-800" />
-                        </motion.div>
-                    </div>
                 </div>
 
                 <style>{`

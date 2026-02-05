@@ -8,6 +8,7 @@ import Services from './_components/Services';
 import Skills from './_components/Skills';
 import Projects from './_components/Projects';
 import Education from './_components/Education';
+import DownloadCV from './_components/DownloadCv';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,8 @@ const App: React.FC = () => {
         <Skills/>
 
         <Projects/>
+
+        <DownloadCV/>
       </main>
 
       <footer className="py-16 border-t border-white/5 bg-slate-950 text-center">

@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Terminal, Activity } from 'lucide-react';
-import MarginWrapper from './MarginWrapper';
 import { navLinks } from '../_utils/Constant';
 
 const Navbar: React.FC = () => {

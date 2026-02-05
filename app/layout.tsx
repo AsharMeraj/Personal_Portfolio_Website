@@ -28,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="min-h-screen m-auto selection:bg-blue-500/30 bg-slate-950">
+        <main className="min-h-screen m-auto selection:bg-blue-500/30">
+          <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
+            style={{ backgroundImage: `linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)`, backgroundSize: '60px 60px' }}></div>
           <Navbar />
           {children}
         </main>

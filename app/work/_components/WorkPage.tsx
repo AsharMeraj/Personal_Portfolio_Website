@@ -1,62 +1,151 @@
 'use client'
-import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Database, Box, Cpu, Shield } from 'lucide-react';
-import MarginWrapper from '../../_components/MarginWrapper';
-import ProjectCard from '../../_components/ProjectCards';
-import { CurrentTime, PROJECT } from '../../_utils/Constant';
+import React, { useState, useMemo, useRef, useEffect, useLayoutEffect } from 'react';
+import { Search, Database, Box, Shield } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import MarginWrapper from '@/app/_components/MarginWrapper';
+import ProjectCards from '@/app/_components/ProjectCards';
+import { PROJECT } from '@/app/_utils/Constant';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-};
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 const WorkPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('ALL');
+  
+  // Refs for animation targets
+  const headerRef = useRef<HTMLDivElement>(null);
+  const controlsRef = useRef<HTMLDivElement>(null);
+  const statusRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const emptyRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
 
-  const categories = ['ALL', 'AI/MACHINE LEARNING', 'CYBER SECURITY', 'FULLSTACK ARCH', 'BACKEND INFRA', 'FRONTEND SYSTEMS'];
+  const categories = ['ALL', 'AGENTIC SYSTEMS', 'ECOMMERCE', 'MEDICAL SYSTEM', 'AI & EDUCATION', 'SERVICE SECTOR'];
 
   const filteredProjects = useMemo(() => {
-    return PROJECT.filter(project => {
-      const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          project.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-      const matchesFilter = activeFilter === 'ALL' || project.category === activeFilter;
-      return matchesSearch && matchesFilter;
+    const query = searchQuery.toLowerCase().trim();
+    const filter = activeFilter.toUpperCase().trim();
+
+    return PROJECT.filter((project) => {
+      const projectCategory = project.category.toUpperCase().trim();
+      const matchesFilter = filter === "ALL" || projectCategory === filter;
+      if (!matchesFilter) return false;
+
+      const matchesSearch =
+        project.title.toLowerCase().includes(query) ||
+        project.tags.some((tag) => tag.toLowerCase().includes(query)) ||
+        project.description.toLowerCase().includes(query);
+
+      return matchesSearch;
     });
   }, [searchQuery, activeFilter]);
 
+  // Initial Entrance Animations
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Header Animation
+      gsap.from('.header-tag', {
+        opacity: 0,
+        x: -20,
+        duration: 0.8,
+        ease: 'power3.out'
+      });
+      
+      gsap.from('.header-title', {
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        delay: 0.1,
+        ease: 'power3.out'
+      });
+
+      // Controls Entrance
+      gsap.from(controlsRef.current, {
+        opacity: 0,
+        y: 10,
+        duration: 0.6,
+        delay: 0.3,
+        ease: 'power2.out'
+      });
+
+      // Status Indicator Entrance
+      gsap.from(statusRef.current, {
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.5,
+        ease: 'power2.out'
+      });
+
+      // Footer Animation on Scroll
+      // Fixed: Removed duplicate 'opacity' key in the configuration object.
+      gsap.from(footerRef.current, {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: "top 95%",
+          toggleActions: "play none none none"
+        },
+        duration: 1
+      });
+    }, headerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  // Grid/Project List Animation when filtered list changes
+  useEffect(() => {
+    if (filteredProjects.length > 0) {
+      // Small delay to ensure DOM is ready after React render
+      const ctx = gsap.context(() => {
+        gsap.fromTo('.project-card-wrapper', 
+          { 
+            opacity: 0, 
+            y: 40, 
+            scale: 0.95 
+          }, 
+          { 
+            opacity: 1, 
+            y: 0, 
+            scale: 1, 
+            duration: 0.6, 
+            stagger: 0.1, 
+            ease: 'back.out(1.7)' 
+          }
+        );
+      }, gridRef);
+      return () => ctx.revert();
+    } else {
+      const ctx = gsap.context(() => {
+        gsap.fromTo(emptyRef.current, 
+          { opacity: 0 }, 
+          { opacity: 1, duration: 0.5 }
+        );
+      });
+      return () => ctx.revert();
+    }
+  }, [filteredProjects]);
+
   return (
-    <div className="pt-16">
+    <div className="pt-16 min-h-screen bg-slate-950 overflow-x-hidden">
       <MarginWrapper>
         {/* Page Header */}
-        <header className="mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center space-x-4 mb-4"
-          >
+        <header className="mb-16" ref={headerRef}>
+          <div className="header-tag flex items-center space-x-4 mb-4">
             <div className="h-px w-12 bg-blue-500" />
-            <span className="text-xs text-center lg:text-start font-mono w-fit  m-auto lg:m-0 border-b border-blue-500 text-blue-500 tracking-[0.5em] uppercase pb-2">
+            <span className="text-xs text-center lg:text-start font-mono w-fit m-auto lg:m-0 border-b border-blue-500 text-blue-500 tracking-[0.5em] uppercase pb-2">
               REPOS_ARCHIVE // PROJECT_DATABASE
             </span>
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-white text-center lg:text-start  text-4xl md:text-5xl lg:text-6xl font-black w-fit leading-none tracking-tighter"
-          >
+          </div>
+          <h1 className="header-title text-white text-center lg:text-start text-4xl md:text-5xl lg:text-6xl font-black w-fit leading-none tracking-tighter">
             SYSTEM<br />
             <span className="gradient-text">BLUEPRINTS.</span>
-          </motion.h1>
+          </h1>
         </header>
 
         {/* Controls Module */}
-        <div className="mb-12 flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
+        <div ref={controlsRef} className="mb-12 flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
           {/* Search Module */}
           <div className="relative w-full lg:max-w-md group">
             <div className="absolute inset-0 bg-blue-500/5 blur-xl group-focus-within:bg-blue-500/10 transition-all" />
@@ -77,13 +166,12 @@ const WorkPage: React.FC = () => {
           <div className="flex flex-wrap gap-2">
             {categories.map((cat, idx) => (
               <button
-                key={cat}
+                key={idx}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 text-[9px] font-mono tracking-widest uppercase border transition-all ${
-                  activeFilter === cat 
-                  ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-600/20' 
+                className={`px-4 py-2 text-[9px] font-mono tracking-widest uppercase border transition-all ${activeFilter === cat
+                  ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-600/20'
                   : 'bg-slate-900/40 border-white/5 text-slate-500 hover:border-blue-500/30 hover:text-blue-400'
-                }`}
+                  }`}
               >
                 [{idx < 10 ? `0${idx}` : idx}] {cat.replace('/', '_')}
               </button>
@@ -92,7 +180,7 @@ const WorkPage: React.FC = () => {
         </div>
 
         {/* Status Indicators */}
-        <div className="flex items-center gap-8 mb-10 text-[9px] font-mono text-slate-600 uppercase tracking-[0.3em] border-b border-white/5 pb-4">
+        <div ref={statusRef} className="flex items-center gap-8 mb-10 text-[9px] font-mono text-slate-600 uppercase tracking-[0.3em] border-b border-white/5 pb-4">
           <div className="flex items-center gap-2">
             <Box className="w-3 h-3 text-blue-500" />
             <span>Modules: {filteredProjects.length}</span>
@@ -104,52 +192,49 @@ const WorkPage: React.FC = () => {
         </div>
 
         {/* Projects Grid */}
-        <AnimatePresence mode="popLayout">
+        <div>
           {filteredProjects.length > 0 ? (
-            <motion.div
+            <div
               key="grid"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
+              ref={gridRef}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
             >
               {filteredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <div key={project.id} className="project-card-wrapper">
+                  <ProjectCards project={project} />
+                </div>
               ))}
-            </motion.div>
+            </div>
           ) : (
-            <motion.div
+            <div
               key="no-results"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              ref={emptyRef}
               className="py-20 text-center border border-dashed border-white/5 rounded-xl"
             >
               <Database className="w-12 h-12 text-slate-800 mx-auto mb-4" />
               <p className="font-mono text-slate-600 uppercase tracking-[0.2em] text-xs">
                 ERR_0404: NO_MODULES_FOUND_IN_CURRENT_QUERY
               </p>
-              <button 
+              <button
                 onClick={() => { setSearchQuery(''); setActiveFilter('ALL'); }}
                 className="mt-6 text-[10px] font-mono text-blue-500 border-b border-blue-500 hover:text-blue-400 transition-colors uppercase tracking-widest"
               >
                 Restart_Search_Sequence
               </button>
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
+        </div>
 
         {/* Technical Footer Label */}
         <div className="mt-20 flex justify-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 0.3 }}
+          <div
+            ref={footerRef}
             className="flex items-center gap-8 font-mono text-[9px] tracking-[0.4em] uppercase text-slate-600"
           >
             <div className="w-20 h-px bg-slate-800" />
             <span>End of Primary Repository</span>
             <div className="w-20 h-px bg-slate-800" />
-          </motion.div>
+          </div>
         </div>
       </MarginWrapper>
     </div>

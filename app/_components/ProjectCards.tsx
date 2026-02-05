@@ -13,7 +13,7 @@ export const containerVariants: Variants = {
 
 const cardVariants: Variants = {
   hidden: { y: 40, opacity: 0, scale: 0.95 },
-  visible: { 
+  whileInView: { 
     y: 0, 
     opacity: 1, 
     scale: 1,
@@ -24,8 +24,8 @@ const cardVariants: Variants = {
 export default function ProjectCards({project}: {project: Project}) {
   return (
     <motion.div 
-      variants={cardVariants}
-      className="group relative flex flex-col bg-slate-900/40 border border-white/5 backdrop-blur-sm overflow-hidden"
+      // variants={cardVariants}
+      className="group relative flex flex-col bg-slate-900/40 border border-white/5 backdrop-blur-sm overflow-hidden z-50"
     >
       {/* Technical Header */}
       <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-slate-950/50 text-[10px] font-mono tracking-widest text-slate-500 uppercase">
@@ -51,7 +51,7 @@ export default function ProjectCards({project}: {project: Project}) {
         {/* Scanner Line */}
         <div className="absolute top-0 left-0 w-full h-0.5 bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)] opacity-0 group-hover:animate-scanner pointer-events-none" />
         
-        <div className="absolute bottom-2 left-4 flex gap-6">
+        <div className="absolute bottom-2 left-4 flex gap-2">
           {project.tags.map(tag => (
             <span key={tag} className="px-2 py-1 bg-slate-950/80 backdrop-blur-md text-[9px] font-mono text-blue-400 border border-blue-500/20">
               0x_{tag}

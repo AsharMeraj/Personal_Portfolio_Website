@@ -28,12 +28,9 @@ export const itemVariants: Variants = {
 const Skills = () => {
     return (
         <MarginWrapper>
-            <section id="skills" className='relative px-2 bg-slate-950 overflow-hidden'>
+            <section id="skills" className='relative px-2 overflow-hidden'>
                 {/* Background Layers */}
-                <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
-                    style={{ backgroundImage: `radial-gradient(#3b82f6 0.5px, transparent 0.5px)`, backgroundSize: '24px 24px' }}></div>
-                <span className='w-full bg-[url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop")] bg-center bg-cover absolute inset-0 -z-10 scale-x-100 opacity-[0.04]'></span>
-                <span className='w-full bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950 absolute inset-0 z-0'></span>
+               
 
                 <div className='w-full m-auto relative z-10'>
                     {/* Headers */}

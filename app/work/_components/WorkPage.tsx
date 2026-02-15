@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const WorkPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('ALL');
-  
+
   // Refs for animation targets
   const headerRef = useRef<HTMLDivElement>(null);
   const controlsRef = useRef<HTMLDivElement>(null);
@@ -52,7 +52,7 @@ const WorkPage: React.FC = () => {
         duration: 0.8,
         ease: 'power3.out'
       });
-      
+
       gsap.from('.header-title', {
         opacity: 0,
         y: 20,
@@ -99,33 +99,42 @@ const WorkPage: React.FC = () => {
     if (filteredProjects.length > 0) {
       // Small delay to ensure DOM is ready after React render
       const ctx = gsap.context(() => {
-        gsap.fromTo('.project-card-wrapper', 
-          { 
-            opacity: 0, 
-            y: 40, 
-            scale: 0.95 
-          }, 
-          { 
-            opacity: 1, 
-            y: 0, 
-            scale: 1, 
-            duration: 0.6, 
-            stagger: 0.1, 
-            ease: 'back.out(1.7)' 
+        gsap.fromTo('.project-card-wrapper',
+          {
+            opacity: 0,
+            y: 40,
+            scale: 0.95
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'back.out(1.7)'
           }
         );
       }, gridRef);
       return () => ctx.revert();
     } else {
       const ctx = gsap.context(() => {
-        gsap.fromTo(emptyRef.current, 
-          { opacity: 0 }, 
+        gsap.fromTo(emptyRef.current,
+          { opacity: 0 },
           { opacity: 1, duration: 0.5 }
         );
       });
       return () => ctx.revert();
     }
   }, [filteredProjects]);
+
+  const uniqueCategories = ["ALL", ...new Set(PROJECT.map((p) => p.category))];
+
+  // 2. Helper function to get the count
+  const getCategoryCount = (cat: string) => {
+    if (cat === "ALL") return PROJECT.length;
+    return PROJECT.filter((p) => p.category === cat).length;
+  };
+
 
   return (
     <div className="pt-16 min-h-screen bg-slate-950 overflow-x-hidden">
@@ -164,18 +173,24 @@ const WorkPage: React.FC = () => {
 
           {/* Filter Module */}
           <div className="flex flex-wrap gap-2">
-            {categories.map((cat, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 text-[9px] font-mono tracking-widest uppercase border transition-all ${activeFilter === cat
-                  ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-600/20'
-                  : 'bg-slate-900/40 border-white/5 text-slate-500 hover:border-blue-500/30 hover:text-blue-400'
-                  }`}
-              >
-                [{idx < 10 ? `0${idx}` : idx}] {cat.replace('/', '_')}
-              </button>
-            ))}
+            {uniqueCategories.map((category, idx) => {
+              const count = getCategoryCount(category);
+              const isActive = activeFilter === category;
+
+              return (
+                <button
+                  key={category} // Using category name as key is safer than index
+                  onClick={() => setActiveFilter(category)}
+                  className={`px-4 py-2 text-[9px] font-mono tracking-widest uppercase border transition-all ${isActive
+                      ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-600/20'
+                      : 'bg-slate-900/40 border-white/5 text-slate-500 hover:border-blue-500/30 hover:text-blue-400'
+                    }`}
+                >
+                  {/* Showing the count formatted as [0X] */}
+                  [{count < 10 ? `0${count}` : count}] {category}
+                </button>
+              );
+            })}
           </div>
         </div>
 

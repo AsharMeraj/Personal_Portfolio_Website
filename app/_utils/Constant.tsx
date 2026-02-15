@@ -192,6 +192,16 @@ export const PROJECT: Project[] = [
   },
   {
     id: "PRJ-006",
+    title: "Digital Clinic",
+    category: "MEDICAL SYSTEM",
+    description: "Health-tech dashboard for real-time vitals monitoring and medical data visualization with high-scale vector optimization.",
+    tags: ["React", "TypeScript", "Neon DB", "Inngest"],
+    image: "/digitalclinic.png",
+    github: "#",
+    live: "#"
+  },
+  {
+    id: "PRJ-007",
     title: "AIM",
     category: "AI & EDUCATION",
     description: "Intelligent interview preparation tool using Gemini AI to simulate realistic technical interviews and provide instant feedback.",
@@ -201,7 +211,7 @@ export const PROJECT: Project[] = [
     live: "https://ai-interview-mocker-aim.vercel.app/"
   },
   {
-    id: "PRJ-007",
+    id: "PRJ-008",
     title: "AI ACADEMY",
     category: "AI & EDUCATION",
     description: "A comprehensive learning management system (LMS) that leverages AI to personalize course content and track student progress.",
@@ -211,7 +221,7 @@ export const PROJECT: Project[] = [
     live: "https://asharmeraj-ai-academy.vercel.app/"
   },
   {
-    id: "PRJ-008",
+    id: "PRJ-009",
     title: "Pest Control",
     category: "SERVICE SECTOR",
     description: "Service management platform designed for lead generation, service booking, and automated customer follow-ups.",
@@ -221,12 +231,22 @@ export const PROJECT: Project[] = [
     live: "https://americanhitecpestcontrol-asharmeraj.vercel.app/"
   },
   {
-    id: "PRJ-009",
+    id: "PRJ-010",
     title: "Dine Market",
     category: "ECOMMERCE",
     description: "A premium fashion and lifestyle marketplace focusing on clean UI/UX and seamless server-side rendered performance.",
     tags: ["Next.js", "Neon DB", "Tailwind CSS", "TypeScript"],
     image: "/Dinemarket.png",
+    github: "#",
+    live: "https://dinemarket-blue.vercel.app/"
+  },
+  {
+    id: "PRJ-011",
+    title: "BusinessGrowth",
+    category: "SERVICE SECTOR",
+    description: "A premium fashion and lifestyle marketplace focusing on clean UI/UX and seamless server-side rendered performance.",
+    tags: ["Next.js", "Neon DB", "Tailwind CSS", "TypeScript"],
+    image: "/businessgrowth.png",
     github: "#",
     live: "https://dinemarket-blue.vercel.app/"
   },

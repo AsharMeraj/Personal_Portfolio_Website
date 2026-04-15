@@ -1,7 +1,7 @@
 # 🌐 Personal Portfolio Website
 
 <p align="center">
-  <img src="public/assets/Landing.png" width="500"/>
+  <img src="public/assets/Landing.png" width="800"/>
 </p>
 
 A modern, fully responsive **personal portfolio website** built using **Next.js** and **TypeScript**.  
@@ -46,7 +46,7 @@ The application is structured as a **single-page experience** with smooth naviga
 ## 🏠 Homepage (Landing Section)
 
 <p align="center">
-  <img src="public/assets/Landing.png" width="500"/>
+  <img src="public/assets/Landing.png" width="800"/>
 </p>
 
 The homepage acts as the **main entry point** of the application.
@@ -83,7 +83,7 @@ Quickly communicates **who you are** and **what you do**.
 ## 🛠️ Skills Section
 
 <p align="center">
-  <img src="public/assets/Skills.png" width="500"/>
+  <img src="public/assets/Skills.png" width="800"/>
 </p>
 
 Displays your **technical expertise** in a structured and visual format.
@@ -102,7 +102,7 @@ Displays your **technical expertise** in a structured and visual format.
 ## 📂 Projects Section
 
 <p align="center">
-  <img src="public/assets/Projects.png" width="500"/>
+  <img src="public/assets/Projects.png" width="800"/>
 </p>
 
 Showcases your **real-world work and applications**.
@@ -124,7 +124,7 @@ Demonstrates **practical skills and experience**, not just theory.
 ## 💼 Services Section
 
 <p align="center">
-  <img src="public/assets/Services.png" width="500"/>
+  <img src="public/assets/Services.png" width="800"/>
 </p>
 
 Highlights the **services you offer** as a developer.

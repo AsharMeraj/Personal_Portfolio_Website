@@ -35,22 +35,22 @@ const TypingText: React.FC<{ text: string; delay?: number }> = ({ text, delay = 
 
 const Hero: React.FC = () => {
   return (
-      <section className="relative px-10 max-w-7xl w-fit m-auto pb-10 pt-32 md:py-20 md:pt-40 lg:pt-55 flex items-center justify-center overflow-hidden">
+      <section className="relative px-10 max-w-7xl w-fit m-auto pb-10 pt-32 md:py-20 md:pt-40 lg:pt-50 flex items-center justify-center overflow-hidden">
         <div className="floating-blob top-1/4 -left-20 opacity-10" />
         <div className="floating-blob bottom-1/4 -right-20 opacity-10" style={{ animationDelay: '1.5s' }} />
 
         <div className="mx-auto w-full z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="flex  gap-20 items-center">
 
             {/* LEFT COLUMN: Professional Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative order-2 lg:order-1"
+              className="relative order-2 lg:order-1 "
             >
-              <div className="relative z-10 w-full max-w-md mx-auto aspect-4/5 bg-slate-900 rounded-3xl border border-blue-500/20 overflow-hidden shadow-2xl lg:block hidden">
-                <Image src={Pic} alt='/' className="w-full h-full object-cover  hover:grayscale-0 transition-all duration-1000" />
+              <div className="relative z-10 w-full mx-auto rounded-3xl border border-blue-500/20 overflow-hidden shadow-2xl lg:block hidden">
+                <Image width={400} src={Pic} alt='/' className="object-cover-auto transition-all duration-1000" />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950 to-transparent opacity-60 pointer-events-none" />
 
               </div>
@@ -89,9 +89,9 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="mb-8"
+                className="mb-4"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-none mb-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-black tracking-tight leading-none mb-4">
                   <span className="block text-white">SOFTWARE</span>
                   <span className="gradient-text block">ENGINEER.</span>
                 </h1>
@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="max-w-xl mx-auto lg:mx-0 font-mono text-sm bg-slate-900/50 p-6 border border-white/5 rounded-xl mb-10 text-left relative overflow-hidden"
+                className="max-w-xl mx-auto lg:mx-0 font-mono text-sm bg-slate-900/50 p-6 border border-white/5 rounded-xl mb-6 text-left relative overflow-hidden"
               >
                 <div className="flex items-center space-x-2 text-slate-500 mb-4 text-[9px] uppercase tracking-[0.2em] border-b border-white/5 pb-2">
                   <Terminal className="w-3 h-3" />

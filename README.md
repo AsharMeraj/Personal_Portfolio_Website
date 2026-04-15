@@ -17,7 +17,6 @@
 - [Services](#services)
 - [Skills](#skills)
 - [Projects](#projects)
-- [Getting Started](#getting-started)
 - [Tech Stack](#tech-stack)
 - [License](#license)
 
@@ -52,30 +51,6 @@ The skills section highlights core technical competencies through a clean, card-
 A curated showcase of real-world projects, each presented with key details to demonstrate problem-solving ability and technical range. Project cards provide a concise yet informative overview, making it easy for visitors to explore work and understand the scope of each build.
 
 <img src="/public/assets/Projects.png" width="800"/>
-
----
-
-## Getting Started
-
-Follow these steps to run the project locally:
-
-**Prerequisites:** Node.js 18+ and npm/yarn/pnpm installed.
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/your-portfolio.git
-
-# Navigate into the project directory
-cd your-portfolio
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
 ---
 

@@ -1,41 +1,100 @@
-# Personal Portfolio Website
+# Personal Portfolio
 
-A modern, responsive personal portfolio website designed to present professional profile, skills, projects, and services in a clean and structured format.
+> A modern, responsive developer portfolio built to showcase skills, services, and projects with a clean and professional design.
 
----
-
-## Landing Page / Hero Section
-
-A focused introduction section that presents a clear personal identity, professional role, and provides immediate access to key actions such as exploring work and viewing the portfolio content.
-
-<img src="public/assets/Landing.png" width="800"/>
-
----
-
-## Services Section
-
-This section highlights the professional services offered, providing a clear overview of capabilities and areas of expertise.
-
-<img src="public/assets/Services.png" width="800"/>
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=flat-square&logo=tailwindcss)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Live-brightgreen?style=flat-square)
 
 ---
 
-## Skills Section
+## Table of Contents
 
-A structured presentation of technical and professional skills, designed to give a quick understanding of expertise and strengths.
-
-<img src="public/assets/Skills.png" width="800"/>
-
----
-
-## Projects Section
-
-A curated showcase of completed and featured projects, demonstrating practical experience and real-world applications.
-
-<img src="public/assets/Projects.png" width="800"/>
+- [Landing Page / Hero](#landing-page--hero)
+- [Services](#services)
+- [Skills](#skills)
+- [Projects](#projects)
+- [Getting Started](#getting-started)
+- [Tech Stack](#tech-stack)
+- [License](#license)
 
 ---
 
-## Summary
+## Landing Page / Hero
 
-This portfolio provides a clear and organized way to present professional information, allowing visitors to quickly understand skills, services, and project experience in a visually structured layout.
+The landing page serves as the first impression — featuring a bold hero section with a personal introduction and a direct call to action for downloading the CV. Smooth navigation links guide visitors through each section of the portfolio seamlessly, ensuring an engaging and intuitive browsing experience.
+
+<img src="/public/assets/Landing.png" width="800"/>
+
+---
+
+## Services
+
+This section presents the range of professional services offered, giving potential clients and collaborators a clear picture of what value can be delivered. Each service is displayed in a structured, visually distinct layout designed to communicate expertise and focus areas at a glance.
+
+<img src="/public/assets/Services.png" width="800"/>
+
+---
+
+## Skills
+
+The skills section highlights core technical competencies through a clean, card-based layout that makes it easy for recruiters and collaborators to assess proficiency at a glance. Each skill card is designed for clarity, ensuring the tech stack is immediately recognizable and well-presented.
+
+<img src="/public/assets/Skills.png" width="800"/>
+
+---
+
+## Projects
+
+A curated showcase of real-world projects, each presented with key details to demonstrate problem-solving ability and technical range. Project cards provide a concise yet informative overview, making it easy for visitors to explore work and understand the scope of each build.
+
+<img src="/public/assets/Projects.png" width="800"/>
+
+---
+
+## Getting Started
+
+Follow these steps to run the project locally:
+
+**Prerequisites:** Node.js 18+ and npm/yarn/pnpm installed.
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/your-portfolio.git
+
+# Navigate into the project directory
+cd your-portfolio
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| [Next.js](https://nextjs.org/) | React framework with App Router & SSR |
+| [React](https://react.dev/) | Component-based UI library |
+| [TypeScript](https://www.typescriptlang.org/) | Static typing for maintainable code |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling |
+| [PostCSS](https://postcss.org/) | CSS transformation and optimization |
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+<p align="center">Designed & built with ❤️ — feel free to reach out or star the repo if you found it helpful!</p>

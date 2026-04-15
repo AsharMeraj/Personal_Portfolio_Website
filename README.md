@@ -1,55 +1,41 @@
-# 🧠 Personal Portfolio Website
+# Personal Portfolio Website
 
-A modern, responsive personal portfolio website designed to showcase skills, projects, services, and professional background in a clean and structured layout.
-
----
-
-# 🏠 Landing Page / Hero Section
-
-## Welcome Section
-
-A strong introductory section that presents a clear personal identity, professional role, and quick access to key actions like viewing work or downloading a CV.
-
-<p align="center">
-  <img src="public/assets/Landing.png" width="800"/>
-</p>
+A modern, responsive personal portfolio website designed to present professional profile, skills, projects, and services in a clean and structured format.
 
 ---
 
-# 📄 Other Sections / Pages
+## Landing Page / Hero Section
+
+A focused introduction section that presents a clear personal identity, professional role, and provides immediate access to key actions such as exploring work and viewing the portfolio content.
+
+<img src="public/assets/Landing.png" width="800"/>
 
 ---
 
-## 💼 Services Section
+## Services Section
 
-A dedicated section highlighting the services offered, focusing on professional capabilities and areas of expertise.
+This section highlights the professional services offered, providing a clear overview of capabilities and areas of expertise.
 
-<p align="center">
-  <img src="public/assets/Services.png" width="800"/>
-</p>
+<img src="public/assets/Services.png" width="800"/>
 
 ---
 
-## 🧠 Skills Section
+## Skills Section
 
-A structured showcase of technical and professional skills, presented in a clean and easy-to-scan format.
+A structured presentation of technical and professional skills, designed to give a quick understanding of expertise and strengths.
 
-<p align="center">
-  <img src="public/assets/Skills.png" width="800"/>
-</p>
+<img src="public/assets/Skills.png" width="800"/>
 
 ---
 
-## 🚀 Projects Section
+## Projects Section
 
-A curated display of completed and featured projects, highlighting real-world work and practical experience.
+A curated showcase of completed and featured projects, demonstrating practical experience and real-world applications.
 
-<p align="center">
-  <img src="public/assets/Projects.png" width="800"/>
-</p>
+<img src="public/assets/Projects.png" width="800"/>
 
 ---
 
-# 📌 Summary
+## Summary
 
-This portfolio is designed to provide a smooth and professional user experience, allowing visitors to quickly understand capabilities, explore work, and evaluate expertise in a visually structured format.
+This portfolio provides a clear and organized way to present professional information, allowing visitors to quickly understand skills, services, and project experience in a visually structured layout.

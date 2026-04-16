@@ -1,67 +1,72 @@
-# Muhammad Ashar — Personal Portfolio
+# Muhammad Ashar — Portfolio
 
-> A personal portfolio website where I showcase my work, skills, and experience as a developer.
+> A futuristic "System Architect" portfolio built to show who I am, what I build, and how I think.
 
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer%20Motion-EF0077?style=flat&logo=framer&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?style=flat-square&logo=tailwindcss)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-latest-EF008F?style=flat-square&logo=framer)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+![Status](https://img.shields.io/badge/status-live-brightgreen?style=flat-square)
 
 ---
 
-## Table of Contents
+## 📋 Table of Contents
 
-- [Landing Page](#-landing-page)
+- [Landing](#-landing)
 - [Services](#-services)
 - [Skills](#-skills)
 - [Projects](#-projects)
-- [Getting Started](#-getting-started)
 - [Tech Stack](#-tech-stack)
 - [License](#-license)
 
 ---
 
-## 🏠 Landing Page
+## 🖥️ Landing
 
-This is the first thing you see when you land on the site. I wanted it to feel like a direct, personal introduction — who I am, what I do, and what you can expect to find here. The hero section sets the tone for the rest of the portfolio with smooth entrance animations powered by Framer Motion.
+The first thing visitors see is a full-screen hero that sets the tone — terminal-style typography, a subtle animated grid background, and a clean introduction to who I am as a Software Engineer. It's designed to pull you in before you've even scrolled.
+
+- Establishes the "System Architect" identity immediately with a distinctive cyber-themed aesthetic
+- Animated entry powered by Framer Motion keeps the landing feel dynamic without being distracting
+- Optimized layout that transitions naturally into the rest of the single-page experience
 
 <img src="/public/assets/Landing.png" width="800"/>
 
 ---
 
-## 🛠 Services
+## 🛠️ Services
 
-Here I lay out the areas I work in — AI/Machine Learning, Backend, Full-stack, and Mobile development. Rather than a wall of text, each service is presented as its own card so it's easy to scan and understand what I actually bring to the table.
+This section breaks down what I actually offer — from AI-Powered CRM development to full-stack engineering. Rather than a generic "I do web dev" blurb, I wanted visitors to walk away with a clear picture of the specific problems I solve.
+
+- Highlights specialized offerings like agentic AI systems and full-stack product builds
+- Each service card is laid out clearly so recruiters and clients can scan at a glance
+- Content is pulled from a centralized constants file, so keeping it current takes seconds
 
 <img src="/public/assets/Services.png" width="800"/>
 
 ---
 
-## 💡 Skills
+## ⚡ Skills
 
-This section breaks down my technical proficiencies across languages, frameworks, and tools. I built it to give visitors a clear picture of my stack at a glance, without having to dig through a resume.
+I built the skills section to go beyond a flat list of logos. Everything is organized by category — Frontend, Backend, AI, Databases — so it's actually readable and tells a story about where my depth is.
+
+- Categorized card-based layout makes it easy to see breadth across the full stack
+- Covers modern tools like Next.js, LangChain, and Vector Databases alongside core fundamentals
+- Designed to give a recruiter a confident answer to "what does this person actually know?"
 
 <img src="/public/assets/Skills.png" width="800"/>
 
 ---
 
-## 🗂 Projects
+## 🗂️ Projects
 
-This is probably the section most people come for. It highlights the projects I've built, what problem each one solves, and the tech behind it. Each card links out to the live project or repository so you can explore the actual work.
+The projects section is where everything comes together. Each card shows the category (think: AGENTIC SYSTEMS, ECOMMERCE), a short description, the tech stack used, and direct links to live demos or source code. There's also a dedicated `/work` route that goes deeper into the full project catalog — I call it the "System Logs."
+
+- Featured project cards include category tags, tech stack chips, and live/source links
+- The `/work` page acts as a full gallery for visitors who want to dig into the complete history
+- Interactive layout guides the visitor from a high-level intro all the way to concrete proof of work
 
 <img src="/public/assets/Projects.png" width="800"/>
-
----
-
-## 🚀 Getting Started
-
-```bash
-git clone https://github.com/your-username/your-portfolio.git
-cd your-portfolio
-npm install
-npm run dev
-```
 
 ---
 
@@ -69,14 +74,15 @@ npm run dev
 
 | Layer | Technology |
 |---|---|
-| Framework | Next.js (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS |
-| Animations | Framer Motion |
+| Framework | Next.js 15 (App Router) |
+| UI Library | React 19 |
+| Styling | Tailwind CSS v4 |
+| Animations | Framer Motion + GSAP |
 | Icons | Lucide React |
+| Language | TypeScript |
 
 ---
 
-## License
+## 📄 License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use it as inspiration for your own portfolio — just don't copy it wholesale. 🙂
+This project is licensed under the [MIT License](LICENSE). Feel free to use it as inspiration — just don't ship it as your own portfolio. ✌️

@@ -81,8 +81,4 @@ The projects section is where everything comes together. Each card shows the cat
 | Icons | Lucide React |
 | Language | TypeScript |
 
----
 
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use it as inspiration — just don't ship it as your own portfolio. ✌️

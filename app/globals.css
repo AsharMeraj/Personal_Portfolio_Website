@@ -1,46 +1,37 @@
 @import "tailwindcss";
 
-/* 1. Variable Consolidation */
+/* 1. White & Multi-Shade Blue Color Palette */
 :root {
-  --primary: #3b82f6;
-  --secondary-color: #60a5fa;
-  --soft-blue: #93c5fd;
-  --background-dark: #020617;
-  --background: #020617;
-  /* Default background */
-  --foreground: #ffffff;
+  /* Canvas & Card Backgrounds */
+  --background: #ffffff;             /* Pure white canvas */
+  --background-subtle: #f8fafc;      /* Subtle off-white for secondary blocks */
+  --background-accent: #f0f7ff;      /* Very soft blue tint for highlighted cards */
+
+  /* Text & Foreground (Navy/Slate for sharp contrast) */
+  --foreground: #0f172a;             /* Deep navy slate for primary text */
+  --foreground-muted: #475569;       /* Muted slate for body/secondary text */
+
+  /* The Blue Spectrum */
+  --primary-dark: #1e3a8a;           /* Deep Navy Blue (High emphasis & primary headings) */
+  --primary: #2563eb;                /* Vibrant Royal Blue (Buttons & active accents) */
+  --primary-hover: #1d4ed8;          /* Deeper blue for hover states */
+  --blue-medium: #60a5fa;            /* Medium sky blue for gradient mid-tones */
+  --blue-light: #dbeafe;             /* Light blue for borders, chips, and badge backgrounds */
+
+  /* Structural Borders */
+  --border: #e2e8f0;                 /* Clean neutral border */
+  --border-blue: #bfdbfe;            /* Soft blue accent border */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-/* 2. Global Styles */
+/* 2. Base Reset */
 body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
-  position: relative;
 }
 
-/* Scanline/Grid Overlay Effect */
-body::before {
-  content: " ";
-  display: block;
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(59, 130, 246, 0.05) 50%);
-  z-index: 1000;
-  background-size: 100% 4px;
-  pointer-events: none;
-  opacity: 0.3;
-}
-
-/* 3. Typography */
+/* 3. Typography Rules */
 h1,
 h2,
 h3,
@@ -52,95 +43,38 @@ h4 {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Elegant Blue Gradient Text (Navy -> Vibrant Blue) */
 .gradient-text {
-  background: linear-gradient(to right, var(--secondary-color), var(--primary), var(--soft-blue));
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--blue-medium) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-glow {
-  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-}
-
-/* 4. Components & Effects */
-.glass {
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(59, 130, 246, 0.2);
-  border-radius: 2rem;
-}
-
-.floating-blob {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(80px);
-  z-index: -1;
-  pointer-events: none;
-  animation: float 20s infinite alternate;
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(50px, 100px);
-  }
-}
-
-
-@keyframes animate-pulse-flow {
-  0% {
-    stroke-dashoffset: 100;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-/* .animate-pulse-flow {
-  animation: animate-pulse-flow 3s linear infinite;
-} */
-
-.rotateBox {
-  transform: rotate(45deg);
-  transition: all 0.5s ease-in-out;
-}
-
-.rotateDiv:hover .rotateBox {
-  transform: rotate(225deg);
-  background-color: rgba(59, 130, 246, 0.1);
-  border-color: var(--primary);
-}
-
-.bouncy-hover:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* 5. Scrollbar */
+/* 4. Minimal Blue Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background-dark);
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--soft-blue);
-  border-radius: 10px;
+  background: color-mix(in srgb, var(--primary) 40%, transparent);
+  border-radius: 9999px;
 }
 
-/* 6. Tailwind Theme Extensions */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* 5. Tailwind v4 Inline Theme Mapping */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

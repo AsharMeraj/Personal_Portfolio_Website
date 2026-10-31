@@ -28,11 +28,9 @@ export const CurrentTime = () => {
 
 
 export const navLinks = [
-  { name: 'ABOUT', href: '/' },
-  { name: 'STACK', href: '/' },
-  { name: 'PROJECTS', href: '/work' },
-  { name: 'HISTORY', href: '/' },
-  { name: 'CONTACT', href: '/' },
+  { name: 'Home', href: '/' },
+  { name: 'Works', href: '/work' },
+  { name: 'Contact', href: '/' },
 ];
 
 
@@ -251,3 +249,7 @@ export const PROJECT: Project[] = [
     live: "https://dinemarket-blue.vercel.app/"
   },
 ];
+
+
+
+

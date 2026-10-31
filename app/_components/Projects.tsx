@@ -1,68 +1,102 @@
+'use client'
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { ExternalLink, Github, Code2, Layers, ArrowRight } from 'lucide-react';
-import ProjectCards, { containerVariants } from './ProjectCards';
+import { ArrowRight, Sparkles } from 'lucide-react';
+import ProjectCards from './ProjectCards';
 import { PROJECT } from '../_utils/Constant';
 import MarginWrapper from './MarginWrapper';
 
+export const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.1,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 24, scale: 0.98 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+        },
+    },
+};
 
 const Projects = () => {
     return (
-        <MarginWrapper>
-            <section id="projects" className="relative bg-slate-950">
-                <div className="mx-auto">
-                    <div className="mb-10 gap-4 md:gap-0 flex md:flex-row flex-col justify-between items-center">
+        <section id="projects" className="bg-slate-50/60 text-slate-800 font-sans relative overflow-hidden">
+            <MarginWrapper>
+                    {/* TOP SECTION: Header & Call to Action */}
+                    <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
+
+                        {/* Heading & Badge */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="space-y-6"
+                            className="flex flex-col items-center md:items-start text-center md:text-left"
                         >
-                            <h2 className="text-xs text-center md:text-start w-fit md:m-0 m-auto font-mono text-blue-500 tracking-[0.5em] uppercase border-l-2 border-blue-500 pl-4">
-                                Project Index 01
-                            </h2>
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl text-center md:text-start font-black text-white tracking-tighter uppercase mt-4">
-                                SYSTEM<br /><span className="gradient-text">BLUEPRINTS.</span>
+                            <div className="mb-5">
+                                <div className="inline-flex items-center space-x-2 bg-blue-100/70 border border-blue-200/80 px-4 py-2 lg:px-5 lg:py-2.5 rounded-full text-blue-700 text-xs lg:text-sm xl:text-base font-bold tracking-wide">
+                                    <Sparkles className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-500" />
+                                    <span>Project Index</span>
+                                </div>
+                            </div>
+
+                            <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                                System <br className="hidden md:block" />
+                                <span className="text-blue-600">Blueprints</span>.
                             </h2>
                         </motion.div>
-                        <a
-                            href="/work"
-                            className="group flex h-fit items-center space-x-4 border border-blue-500/30 bg-slate-900/40 px-8 py-4 text-white font-bold uppercase tracking-widest text-[11px] hover:bg-blue-600/10 hover:border-blue-500 transition-all active:scale-95"
+
+                        {/* "View All" Button */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="flex justify-center md:justify-end pb-2"
                         >
-                            <span>Explore All Repositories</span>
-                            <div className="bg-blue-500/20 p-2 rounded group-hover:bg-blue-500/40 transition-colors">
-                                <ArrowRight className="w-4 h-4 text-blue-400" />
-                            </div>
-                        </a>
+                            <motion.a
+                                href="/work"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                className="group flex items-center space-x-3 bg-white hover:bg-blue-50 text-slate-700 border border-slate-200 hover:border-blue-200 px-7 py-3.5 lg:px-9 lg:py-4 rounded-2xl lg:rounded-[1.25rem] font-bold text-xs lg:text-sm tracking-wider uppercase transition-all shadow-sm"
+                            >
+                                <span>Explore All Work</span>
+                                <div className="bg-blue-100/50 p-1.5 rounded-lg group-hover:bg-blue-200/50 transition-colors">
+                                    <ArrowRight className="w-4 h-4 text-blue-600" />
+                                </div>
+                            </motion.a>
+                        </motion.div>
+
                     </div>
 
+                    {/* PROJECT CARDS GRID */}
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ margin: "-50px" }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+                        viewport={{ once: true, margin: "-50px" }}
+                        className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-2"
                     >
                         {PROJECT.slice(0, 3).map((p) => (
-                            <ProjectCards key={p.id} project={p} />
+                            <motion.div key={p.id} variants={itemVariants}>
+                                <ProjectCards project={p} />
+                            </motion.div>
                         ))}
                     </motion.div>
-
-                </div>
-
-                <style>{`
-        @keyframes scanner {
-          0% { top: 0%; opacity: 0; }
-          10% { opacity: 1; }
-          90% { opacity: 1; }
-          100% { top: 100%; opacity: 0; }
-        }
-        .animate-scanner {
-          animation: scanner 2s ease-in-out infinite;
-        }
-      `}</style>
-            </section>
-        </MarginWrapper>
+            </MarginWrapper>
+        </section>
     );
 };
 

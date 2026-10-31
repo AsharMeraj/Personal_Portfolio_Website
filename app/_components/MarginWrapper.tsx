@@ -1,9 +1,13 @@
 'use client'
 import React from 'react'
 
-const MarginWrapper = ({children}: {children: React.ReactNode}) => {
+const MarginWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className='max-w-7xl m-auto px-6 md:px-8 py-30'>{children}</div>
+    <div className='py-20 px-6 md:px-8'>
+      <main className='max-w-4xl m-auto'>
+        {children}
+      </main>
+    </div>
   )
 }
 

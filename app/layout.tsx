@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
+import SmoothScroll from "./_components/SmoothScroll";
+import PageTransition from "./_components/PageTransition";
+import Footer from "./_components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,11 +31,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="min-h-screen m-auto selection:bg-blue-500/30">
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-            style={{ backgroundImage: `linear-gradient(#3b82f6 1px, transparent 1px), linear-gradient(90deg, #3b82f6 1px, transparent 1px)`, backgroundSize: '60px 60px' }}></div>
+        <SmoothScroll />
+        <main
+          className="min-h-screen m-auto bg-slate-50 selection:bg-blue-500/30"
+          style={{
+            backgroundImage: `linear-gradient(rgba(59,130,246,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.1) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
+          }}
+        >
           <Navbar />
-          {children}
+          <PageTransition>{children}</PageTransition>
+          <Footer />
         </main>
       </body>
     </html>

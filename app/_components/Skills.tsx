@@ -1,155 +1,145 @@
-
+'use client'
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import MarginWrapper from './MarginWrapper';
 import { SkillsCard } from './SkillsCard';
+import { Sparkles, Code2 } from 'lucide-react';
 
-// Explicitly type container variants to ensure correct staggerChildren inference
 export const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.02
+            staggerChildren: 0.05
         }
     }
 };
 
-// Explicitly type item variants to ensure 'type: spring' is treated as a literal instead of string
 export const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 20, opacity: 0, scale: 0.95 },
     visible: {
         y: 0,
         opacity: 1,
-        transition: { type: 'spring', stiffness: 100 }
+        scale: 1,
+        transition: { type: 'spring', stiffness: 260, damping: 20 }
     }
 };
 
 const Skills = () => {
     return (
-        <MarginWrapper>
-            <section id="skills" className='relative px-2 overflow-hidden'>
-                {/* Background Layers */}
-               
+        <section id="skills" className='relative overflow-hidden bg-slate-50/60 text-slate-800 font-sans'>
+            <MarginWrapper>
+                <div className='w-full m-auto relative flex flex-col items-center'>
 
-                <div className='w-full m-auto relative z-10'>
-                    {/* Headers */}
-                    <div className="text-center mb-4">
-                        <motion.h2
+                    {/* Header Section */}
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12 mb-14">
+
+                        {/* Top Left: Badge & Heading */}
+                        <motion.div
                             initial={{ opacity: 0, y: -10 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            
-                            className='text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase mb-2'
+                            viewport={{ once: true }}
+                            className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left"
                         >
-                            Capabilities<span className="text-blue-500">_</span>
-                        </motion.h2>
+                            <div className="mb-5">
+                                <div className="inline-flex items-center space-x-2 bg-blue-100/70 border border-blue-200/80 px-4 py-2 rounded-full text-blue-700 text-xs lg:text-sm xl:text-base font-bold tracking-wide">
+                                    <Sparkles className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-blue-500" />
+                                    <span>Tech Stack & Toolkit</span>
+                                </div>
+                            </div>
+
+                            <h2 className='text-4xl  md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]'>
+                                Engineering <span className="text-blue-600">Capabilities</span>.
+                            </h2>
+                        </motion.div>
+
+                        {/* Top Right: Paragraph */}
                         <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: "100px" }}
-                            
-                            className="h-1 bg-blue-600 mx-auto"
-                        ></motion.div>
+                            initial={{ opacity: 0, y: -10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="flex-1 lg:pl-10 lg:border-l-2 border-blue-100/50 flex justify-center lg:justify-start"
+                        >
+                            <p className="text-base sm:text-lg text-slate-600 font-normal max-w-md text-center lg:text-left leading-relaxed">
+                                The tools and technologies we use to build fast online stores and reliable business systems.
+                            </p>
+                        </motion.div>
+
                     </div>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        
-                        className='font-mono text-sm m-auto mt-8 text-blue-400 px-12 py-3 border border-blue-500/20 w-fit bg-slate-900/60 backdrop-blur-xl rounded-full flex items-center gap-3'
-                    >
-                        <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
-                        ACTIVE_TECH_STACK_SCAN
-                    </motion.div>
+                    <div className='w-full flex flex-col lg:flex-row gap-12 lg:gap-16'>
+                        {/* Left Side: Frontend Cluster */}
+                        <motion.main
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            className='flex-1'
+                        >
+                            <div className="flex items-center gap-2 mb-6 justify-center lg:justify-start">
+                                <Code2 className="w-5 h-5 text-blue-500" />
+                                <h3 className="text-xl font-bold text-slate-800">Frontend & UI</h3>
+                            </div>
+                            <div className='flex flex-wrap gap-3 justify-center lg:justify-start'>
+                                <SkillsCard name='Next.js' />
+                                <SkillsCard name='React.js' />
+                                <SkillsCard name='Typescript' />
+                                <SkillsCard name='Javascript' />
+                                <SkillsCard name='Tailwind CSS' />
+                                <SkillsCard name='Framer Motion' />
+                                <SkillsCard name='Shadcn UI' />
+                                <SkillsCard name='CSS' />
+                                <SkillsCard name='HTML' />
+                            </div>
+                        </motion.main>
 
-                    {/* Animated SVG Path */}
-                    <div className="relative">
-                        <svg className="max-w-4xl w-full m-auto md:px-20  opacity-40"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="744" height="323"
-                            viewBox="0 0 744 323"
-                            fill="none">
-                            <motion.path
-                                initial={{ pathLength: 0 }}
-                                whileInView={{ pathLength: 1 }}
-                                
-                                transition={{ duration: 2, ease: "easeInOut" }}
-                                d="M2 133V86H258V0M366.5 600V0M741.5 133V86H481.5V0"
-                                stroke="url(#paint0_linear_2101_768)"
-                                strokeWidth="1.5"
-                            />
-                            {/* Animated "Pulse" flow */}
-                            <path
-                                d="M2 133V86H258V0M366.5 600V0M741.5 133V86H481.5V0"
-                                stroke="#3b82f6"
-                                strokeWidth="1.5"
-                                strokeDasharray="10 40"
-                                className="animate-pulse-flow"
-                            />
-                            <defs>
-                                <linearGradient id="paint0_linear_2101_768"
-                                    x1="371.963" y1="12"
-                                    x2="359.62" y2="600"
-                                    gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#3b82f6" />
-                                    <stop offset="1" stopColor="white" stopOpacity="0" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <div className='z-20 -mt-20 min-[500px]:-mt-32 sm:-mt-45'>
-                            <motion.main
-                                variants={containerVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                
-                                className='grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32'
-                            >
-                                {/* Left Side: Frontend Cluster */}
-                                <div className='flex flex-wrap gap-4 justify-center md:justify-start content-start'>
-                                    <SkillsCard name='Next.js' />
-                                    <SkillsCard name='Tailwind CSS' />
-                                    <SkillsCard name='Typescript' />
-                                    <SkillsCard name='React.js' />
-                                    <SkillsCard name='Javascript' />
-                                    <SkillsCard name='Framer Motion' />
-                                    <SkillsCard name='Shadcn UI' />
-                                    <SkillsCard name='CSS' />
-                                    <SkillsCard name='HTML' />
-                                </div>
-
-                                {/* Right Side: Backend/AI Cluster */}
-                                <div className='flex flex-wrap gap-4 justify-center md:justify-end content-start'>
-                                    <SkillsCard name='Gemini Ai' />
-                                    <SkillsCard name='OpenAi' />
-                                    <SkillsCard name='Python' />
-                                    <SkillsCard name='Postgres' />
-                                    <SkillsCard name='MongoDb' />
-                                    <SkillsCard name='Drizzle ORM' />
-                                    <SkillsCard name='Inngest' />
-                                    <SkillsCard name='Electron' />
-                
-                                </div>
-                            </motion.main>
-
-                            {/* Bottom Side: Systems Specializations */}
-                            <motion.main
-                                variants={containerVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                
-                                className='w-full flex flex-wrap justify-center mt-12 gap-4 px-6'
-                            >
-                                <SkillsCard name='Generative Ai' />
-                                <SkillsCard name='Fullstack Architecture' />
-                                <SkillsCard name='Cloud Infrastructure' />
-                                <SkillsCard name='Web Animation' />
-                                <SkillsCard name='3D Implementation' />
-                                <SkillsCard name='IoT Integration' />
-                            </motion.main>
-                        </div>
+                        {/* Right Side: Backend/AI Cluster */}
+                        <motion.main
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            className='flex-1'
+                        >
+                            <div className="flex items-center gap-2 mb-6 justify-center lg:justify-start">
+                                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                                <h3 className="text-xl font-bold text-slate-800">Backend, Database & AI</h3>
+                            </div>
+                            <div className='flex flex-wrap gap-3 justify-center lg:justify-start'>
+                                <SkillsCard name='Node.js' />
+                                <SkillsCard name='Python' />
+                                <SkillsCard name='PostgreSQL' />
+                                <SkillsCard name='MongoDB' />
+                                <SkillsCard name='Drizzle ORM' />
+                                <SkillsCard name='Gemini AI' />
+                                <SkillsCard name='OpenAI' />
+                                <SkillsCard name='Inngest' />
+                                <SkillsCard name='Electron' />
+                            </div>
+                        </motion.main>
                     </div>
+
+                    {/* Bottom Side: Systems Specializations */}
+                    <div className="w-full mt-5 pt-5 border-t border-slate-200">
+                        <motion.main
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-100px" }}
+                            className='w-full flex flex-wrap justify-center gap-3'
+                        >
+                            <SkillsCard name='Generative AI Integration' featured />
+                            <SkillsCard name='Fullstack Architecture' featured />
+                            <SkillsCard name='Cloud Infrastructure' featured />
+                            <SkillsCard name='Web Animation' featured />
+                            <SkillsCard name='3D Implementation' featured />
+                            <SkillsCard name='IoT Integration' featured />
+                        </motion.main>
+                    </div>
+
                 </div>
-            </section>
-        </MarginWrapper>
+            </MarginWrapper>
+        </section>
     )
 }
 

@@ -1,6 +1,7 @@
+'use client'
 import React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { Terminal, Code2, Award } from 'lucide-react';
+import { Code2, Award, GraduationCap, Sparkles } from 'lucide-react';
 import { educationData } from '../_utils/Constant';
 import MarginWrapper from './MarginWrapper';
 
@@ -18,96 +19,101 @@ const Education = () => {
     });
 
     return (
-        <MarginWrapper>
-            <section id="education" ref={containerRef} className="relative overflow-hidden">
-                {/* Background Circuit Grid */}
-
-                <div className="mx-auto relative">
-                    {/* Unified Design Header Section */}
-                    <div className="mb-20">
+        <section id="education" ref={containerRef} className="min-h-screen bg-slate-50/60 text-slate-800 font-sans relative overflow-hidden">
+            <div className="w-full mx-auto relative">
+                <MarginWrapper>
+                    {/* Unified Cute Design Header Section (Heading Left, Badge Right) */}
+                    <div className="mb-14">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="space-y-4"
+                            className="flex flex-col lg:flex-row lg:items-center justify-between gap-6"
                         >
-                            <h2 className="text-xs w-fit m-auto mb-4 whitespace-nowrap lg:m-0 font-mono text-blue-500 tracking-[0.2rem] uppercase border-l-2 border-blue-500 pl-4">
-                                Registry // Academic_Logs
+                            <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight text-center lg:text-left">
+                                System <span className="text-blue-600">Evolution</span>.
                             </h2>
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl m-auto mb-4 lg:m-0 lg:text-start text-center font-black text-white tracking-tighter uppercase leading-none">
-                                SYSTEM<br /><span className="gradient-text">EVOLUTION.</span>
-                            </h2>
+
+                            <div className="flex justify-center lg:justify-end">
+                                <div className="inline-flex items-center space-x-2 bg-blue-100/70 border border-blue-200/80 px-4 py-2 rounded-full text-blue-700 text-base font-semibold tracking-wide">
+                                    <Sparkles className="w-4 h-4 text-blue-500" />
+                                    <span>Academic Logs & Registry</span>
+                                </div>
+                            </div>
                         </motion.div>
                     </div>
 
                     {/* Central Vertical Conduit */}
-                    <div className="absolute left-4 md:left-1/2 top-48 bottom-0 w-px bg-white/5 -translate-x-1/2">
+                    <div className="absolute left-6 md:left-1/2 top-48 bottom-12 w-0.5 bg-blue-100 -translate-x-1/2">
                         <motion.div
                             style={{ scaleY, originY: 0 }}
-                            className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-blue-600 via-blue-400 to-transparent shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+                            className="absolute top-0 left-0 w-full h-full bg-blue-600 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.4)]"
                         />
                     </div>
 
                     {/* Timeline Entries */}
-                    <div className="space-y-32 relative">
+                    <div className="space-y-1 relative">
                         {educationData.map((entry, index) => {
                             const isEven = index % 2 === 0;
                             return (
                                 <motion.div
                                     key={entry.id}
-                                    initial={{ opacity: 0, y: 50 }}
+                                    initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
-                                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                                    className={`relative flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-start md:items-center gap-12 md:gap-24`}
+                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                    className={`relative flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-start md:items-center gap-8 md:gap-16`}
                                 >
                                     {/* Connection Node */}
-                                    <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 z-10">
-                                        <div className="absolute inset-0 bg-slate-950 border-2 border-blue-500 rounded-full" />
-                                        <div className="absolute -inset-1 bg-blue-500/20 rounded-full animate-ping" />
+                                    <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-5 h-5 z-10 flex items-center justify-center">
+                                        <div className="w-4 h-4 bg-white border-2 border-blue-600 rounded-full shadow-sm" />
+                                        <div className="absolute inset-0 bg-blue-400/20 rounded-full animate-ping" />
                                     </div>
 
-                                    {/* Content Side */}
-                                    <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${isEven ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
-                                        <div className={`flex flex-col ${isEven ? 'md:items-end' : 'md:items-start'} gap-2 mb-4`}>
-                                            <span className="text-[10px] font-mono text-blue-500 tracking-[0.3em] uppercase opacity-70">
-                                                [{entry.period}]
-                                            </span>
-                                            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase leading-none">
-                                                {entry.degree}
-                                            </h3>
-                                        </div>
+                                    {/* Content Side (Soft Card) */}
+                                    <div className={`w-full md:w-1/2 pl-14 md:pl-0 ${isEven ? 'md:text-right md:pr-10' : 'md:text-left md:pl-10'}`}>
+                                        <div className={`bg-white p-6 sm:p-8 rounded-[2rem] border border-blue-100 shadow-xl shadow-blue-500/5 flex flex-col ${isEven ? 'md:items-end' : 'md:items-start'} text-left`}>
+                                            <div className={`flex flex-col ${isEven ? 'md:items-end' : 'md:items-start'} gap-1.5 mb-3`}>
+                                                <span className="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full w-fit">
+                                                    {entry.period}
+                                                </span>
+                                                <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                                                    {entry.degree}
+                                                </h3>
+                                            </div>
 
-                                        <div className={`flex items-center gap-3 text-blue-400 font-mono text-[11px] tracking-widest uppercase mb-4 ${isEven ? 'justify-end' : 'justify-start'}`}>
-                                            <Terminal className="w-3 h-3" />
-                                            <span>{entry.institution}</span>
-                                        </div>
+                                            <div className={`flex items-center gap-2 text-slate-500 font-medium text-xs uppercase tracking-wider mb-4 ${isEven ? 'justify-end' : 'justify-start'}`}>
+                                                <GraduationCap className="w-4 h-4 text-blue-500" />
+                                                <span>{entry.institution}</span>
+                                            </div>
 
-                                        <p className={`text-slate-500 text-sm leading-relaxed max-w-md ${isEven ? 'ml-auto' : 'mr-auto'}`}>
-                                            {entry.description}
-                                        </p>
+                                            <p className={`text-slate-600 text-sm leading-relaxed max-w-md ${isEven ? 'md:text-right' : 'md:text-left'}`}>
+                                                {entry.description}
+                                            </p>
+                                        </div>
                                     </div>
 
                                     {/* Metadata / Highlights Side */}
-                                    <div className={`hidden md:block w-1/2 ${isEven ? 'text-left pl-12' : 'text-right pr-12'}`}>
-                                        <div className={`flex flex-col gap-3 ${isEven ? 'items-start' : 'items-end'}`}>
-                                            <div className="flex items-center gap-2 text-[9px] font-mono text-slate-600 tracking-widest uppercase mb-2">
-                                                <Code2 className="w-3 h-3" />
-                                                <span>{entry.id} // CORE_MODULES</span>
+                                    <div className={`hidden md:block w-1/2 ${isEven ? 'text-left pl-10' : 'text-right pr-10'}`}>
+                                        <div className={`flex flex-col gap-2.5 ${isEven ? 'items-start' : 'items-end'}`}>
+                                            <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                                <Code2 className="w-3.5 h-3.5 text-blue-500" />
+                                                <span>Core Focus</span>
                                             </div>
                                             {entry.highlights.map((h, i) => (
-                                                <div key={i} className={`flex items-center gap-3 text-white font-bold text-[10px] uppercase tracking-widest px-4 py-2 border border-white/5 bg-slate-900/40 backdrop-blur-sm hover:border-blue-500/30 transition-all ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
-                                                    <Award className="w-3 h-3 text-blue-500" />
+                                                <div key={i} className={`flex items-center gap-2 text-slate-700 font-bold text-xs uppercase tracking-wide px-4 py-2.5 rounded-2xl bg-white border border-blue-100 shadow-xs hover:border-blue-300 transition-all ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
+                                                    <Award className="w-4 h-4 text-blue-500" />
                                                     {h}
                                                 </div>
                                             ))}
                                         </div>
                                     </div>
 
-                                    {/* Mobile Meta Info */}
-                                    <div className="md:hidden pl-12 mt-4 flex flex-wrap gap-2">
+                                    {/* Mobile Meta Info Badges */}
+                                    <div className="md:hidden pl-14 w-full flex flex-wrap gap-2">
                                         {entry.highlights.map((h, i) => (
-                                            <span key={i} className="px-2 py-1 bg-slate-900 border border-white/5 text-[8px] font-mono text-slate-400 uppercase">
+                                            <span key={i} className="px-3 py-1.5 bg-white border border-blue-100 rounded-xl text-xs font-semibold text-slate-700 shadow-2xs flex items-center gap-1.5">
+                                                <Award className="w-3.5 h-3.5 text-blue-500" />
                                                 {h}
                                             </span>
                                         ))}
@@ -116,11 +122,9 @@ const Education = () => {
                             );
                         })}
                     </div>
-
-                    
-                </div>
-            </section>
-        </MarginWrapper>
+                </MarginWrapper>
+            </div>
+        </section>
     );
 };
 

@@ -1,97 +1,53 @@
+'use client'
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { ExternalLink, Github, Code2, Layers } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Project } from '../_utils/types';
-
-export const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
+import Link from 'next/link';
 
 const cardVariants: Variants = {
-  hidden: { y: 40, opacity: 0, scale: 0.95 },
-  whileInView: { 
+  hidden: { y: 24, opacity: 0, scale: 0.98 },
+  visible: { 
     y: 0, 
     opacity: 1, 
     scale: 1,
-    transition: { type: "spring", stiffness: 100, damping: 15 }
+    transition: { type: "spring", stiffness: 260, damping: 20 }
   }
 };
 
-export default function ProjectCards({project}: {project: Project}) {
+export default function ProjectCards({ project }: { project: Project }) {
   return (
     <motion.div 
-      // variants={cardVariants}
-      className="group relative flex flex-col bg-slate-900/40 border border-white/5 backdrop-blur-sm overflow-hidden z-50"
+      variants={cardVariants}
+      className="group relative flex flex-col rounded-2xl bg-white border border-blue-100 shadow-xl shadow-blue-500/5 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-200 transition-all duration-300 overflow-hidden"
     >
-      {/* Technical Header */}
-      <div className="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-slate-950/50 text-[10px] font-mono tracking-widest text-slate-500 uppercase">
-        <div className="flex items-center gap-2">
-          <Code2 className="w-3 h-3 text-blue-500" />
-          <span>ID: {project.id}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Layers className="w-3 h-3" />
-          <span>V2.1.0_LATEST</span>
-        </div>
-      </div>
-
-      {/* Image Section with Scanner Hover */}
-      <div className="relative  overflow-hidden">
+      <Link href={`/project/${project.id}`} className="relative block w-full aspect-[16/10] outline-none">
+        
+        {/* Background Image */}
         <img 
           src={project.image} 
           alt={project.title} 
-          className="w-full h-full transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        {/* <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-500" /> */}
         
-        {/* Scanner Line */}
-        <div className="absolute top-0 left-0 w-full h-0.5 bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)] opacity-0 group-hover:animate-scanner pointer-events-none" />
-        
-        <div className="absolute bottom-2 left-4 flex gap-2">
-          {project.tags.map(tag => (
-            <span key={tag} className="px-2 py-1 bg-slate-950/80 backdrop-blur-md text-[9px] font-mono text-blue-400 border border-blue-500/20">
-              0x_{tag}
-            </span>
-          ))}
+        {/* Hover Overlay with Action Icon */}
+        <div className="absolute inset-0 bg-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div className="bg-white/95 backdrop-blur-md text-blue-600 p-4 rounded-full shadow-lg transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400 ease-out flex items-center justify-center mb-10">
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+          </div>
         </div>
-      </div>
 
-      {/* Content */}
-      <div className="p-6 flex-1 flex flex-col">
-        <span className="text-[10px] font-mono text-blue-500 mb-2 tracking-[0.3em] uppercase">{project.category}</span>
-        <h3 className="text-2xl font-black text-white mb-4 tracking-tighter uppercase leading-none group-hover:text-blue-400 transition-colors">
-          {project.title}
-        </h3>
-        <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-1">
-          {project.description}
-        </p>
-
-        <div className="flex items-center gap-4 mt-auto">
-          <a 
-            href={project.live}
-            target='_blank' 
-            className="flex items-center gap-2 text-[10px] font-bold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 uppercase tracking-widest transition-all"
-          >
-            <ExternalLink className="w-3 h-3" />
-            Launch Module
-          </a>
-          <a 
-            href={project.github} 
-            className="flex items-center gap-2 text-[10px] font-bold text-slate-400 hover:text-white border border-white/10 hover:border-blue-500/50 px-4 py-2 uppercase tracking-widest transition-all"
-          >
-            <Github className="w-3 h-3" />
-            Source
-          </a>
+        {/* Floating Info Bar (Overlays directly on top of the image) */}
+        <div className="absolute bottom-3 left-8 right-8 bg-white/95 backdrop-blur-md px-5 py-2 rounded-[1rem] shadow-sm flex items-center justify-between border border-white transition-colors duration-300 group-hover:border-blue-100 ">
+          <h3 className="text-lg font-extrabold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors truncate">
+            {project.title}
+          </h3>
+          <span className="text-xs font-bold text-blue-500 tracking-widest uppercase whitespace-nowrap bg-blue-50 px-2.5 py-1 rounded-md">
+            {project.category}
+          </span>
         </div>
-      </div>
-      
-      {/* Glow corner decoration */}
-      <div className="absolute top-0 right-0 w-px h-0 bg-blue-500 group-hover:h-full transition-all duration-700" />
-      <div className="absolute bottom-0 left-0 w-0 h-px bg-blue-500 group-hover:w-full transition-all duration-700" />
+
+      </Link>
     </motion.div>
   );
-};
+}

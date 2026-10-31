@@ -9,6 +9,7 @@ import Skills from './_components/Skills';
 import Projects from './_components/Projects';
 import Education from './_components/Education';
 import DownloadCV from './_components/DownloadCv';
+import Footer from './_components/Footer';
 
 const App: React.FC = () => {
   return (
@@ -28,17 +29,6 @@ const App: React.FC = () => {
         <DownloadCV/>
       </main>
 
-      <footer className="py-16 border-t border-white/5 bg-slate-950 text-center">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-slate-600 text-[10px] font-mono uppercase tracking-[0.5em]">
-            &copy; {new Date().getFullYear()} // System_Architect // build_v.3.1.0
-          </p>
-          <div className="mt-4 flex justify-center space-x-2">
-            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
-            <span className="text-slate-800 text-[9px] font-mono tracking-widest uppercase">Encryption_Protocol: AES-256-Active</span>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

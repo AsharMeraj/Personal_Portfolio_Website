@@ -1,7 +1,7 @@
-
+'use client'
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, BrainCircuit, Database, Layers, Smartphone } from 'lucide-react';
+import { motion, Variants } from 'framer-motion';
+import { BrainCircuit, Database, Layers, Smartphone, Sparkles } from 'lucide-react';
 import MarginWrapper from './MarginWrapper';
 
 interface ServiceCardProps {
@@ -10,24 +10,48 @@ interface ServiceCardProps {
   para: string;
 }
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 24, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 260,
+      damping: 20,
+    },
+  },
+};
+
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, head, para }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-
-      className="flex gap-12 flex-col rotateDiv lg:items-start items-center"
+      variants={itemVariants}
+      className="group bg-white p-6 rounded-[2rem] border border-blue-100 shadow-xl shadow-blue-500/5 hover:shadow-2xl hover:-translate-y-1 hover:border-blue-200 transition-all duration-300 flex flex-col sm:flex-row items-start gap-5 text-left"
     >
-      <div className="relative w-fit">
-        <div className="border border-blue-500/30 p-10 w-fit rotateBox bg-slate-900/40">
-        </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-500">
-          {icon}
-        </div>
+      {/* Icon Bubble */}
+      <div className="bg-blue-50/80 border border-blue-100 p-4 rounded-[1.5rem] text-blue-600 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+        {icon}
       </div>
-      <div className="space-y-3">
-        <h2 className="text-white font-black text-xl text-center lg:text-start uppercase tracking-tighter leading-none">{head}</h2>
-        <p className="font-mono text-center lg:text-start text-[11px] text-slate-500 uppercase tracking-widest leading-relaxed max-w-xs">
+
+      {/* Content */}
+      <div className="pt-1">
+        <h3 className="text-slate-900 font-extrabold text-xl tracking-tight mb-2">
+          {head}
+        </h3>
+        <p className="text-slate-600 text-sm font-normal leading-relaxed">
           {para}
         </p>
       </div>
@@ -35,67 +59,77 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, head, para }) => {
   );
 };
 
-const Services = () => {
+const Services: React.FC = () => {
   return (
-    <MarginWrapper>
-      <section id="about" className="grid place-items-center py-10 relative overflow-hidden">
-        {/* Background Texture */}
-        <span className="w-full bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop')] bg-center bg-cover absolute inset-0 -z-10 -scale-x-100 opacity-[0.04]"></span>
-        <span className="w-full bg-linear-to-b from-slate-950 via-slate-950/80 to-slate-950 absolute inset-0 z-0"></span>
+    <section id="services" className="bg-slate-50/60 text-slate-800 flex items-center justify-center font-sans overflow-hidden">
+      <MarginWrapper>
+        {/* EXACT Container size from the Hero section (max-w-5xl) */}
+        <motion.div
+          className="w-full mx-auto flex flex-col gap-12 lg:gap-14"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
 
-        <div className="gap-20 lg:gap-6 flex w-full justify-between flex-col lg:flex-row z-20 items-center lg:items-start">
-          {/* Left Section: Manifesto */}
-          <div className="flex w-fit my-auto flex-col items-center justify-center gap-10">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className='w-fit flex gap-10 flex-col'
+          {/* TOP SECTION: Split Header (Heading Left, Paragraph Right) */}
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12">
 
-            >
-              <div className='flex flex-col gap-3'>
-                <h2 className="text-xs text-center lg:text-start font-mono w-fit lg:m-0 m-auto border-b border-blue-500 text-blue-500 tracking-[0.5em] uppercasepb-2">Architecture Manifesto</h2>
-                <h2 className="text-white text-center lg:text-start m-auto text-4xl md:text-5xl lg:text-6xl font-black w-fit leading-none tracking-tighter">
-                  SYSTEM<br />INTEGRATION.
-                </h2>
+            {/* Top Left: Badge & Heading */}
+            <motion.div variants={itemVariants} className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
+
+              {/* EXACT Badge styling from Hero */}
+              <div className="mb-5">
+                <div className="inline-flex items-center space-x-2 bg-blue-100/70 border border-blue-200/80 px-4 py-2 rounded-full text-blue-700 text-base font-semibold tracking-wide">
+                  <Sparkles className="w-4 h-4 text-blue-500" />
+                  <span>How I Can Help</span>
+                </div>
               </div>
-              <p className="text-slate-400 text-center lg:text-start max-w-sm w-fit lg:m-0 m-auto text-lg leading-relaxed">
-                From distributed backends to autonomous AI reasoning modules, I engineer the digital infrastructure that powers the future.
-              </p>
-              <button
-                className="w-fit lg:m-0 m-auto flex items-center space-x-4 bg-white text-slate-950 px-10 py-5 font-black uppercase tracking-widest text-[10px] transition-all hover:bg-blue-600 hover:text-white"
-              >
-                <span>Access Repositories</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-              </button>
+
+              {/* EXACT Heading styling from Hero */}
+              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight text-slate-900">
+                What we can <br className="hidden lg:block" />
+                <span className="text-blue-600">build for you</span>.
+              </h2>
             </motion.div>
+
+            {/* Top Right: Paragraph */}
+            <motion.div variants={itemVariants} className="flex-1 lg:pl-10 lg:border-l-2 border-blue-100/50 flex justify-center lg:justify-start">
+
+              {/* EXACT Paragraph styling from Hero */}
+              <p className="text-lg text-slate-600 font-normal max-w-md text-center lg:text-left leading-relaxed">
+                We build online stores and custom business systems that replace manual work. You tell us the problem, we build the tool.
+              </p>
+            </motion.div>
+
           </div>
 
-          {/* Right Section: Modular Grid */}
-          <div className="grid sm:grid-cols-2 gap-y-20 lg:gap-x-6 lg:gap-y-8  xl:gap-y-14">
+          {/* BOTTOM SECTION: Service Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
             <ServiceCard
-              icon={<BrainCircuit className="w-8 h-8" />}
-              head="Agentic AI Systems"
-              para="Deployment of autonomous reasoning agents capable of planning and executing multi-step business logic."
+              icon={<BrainCircuit className="w-6 h-6" />}
+              head="Business Automation"
+              para="Stop doing repetitive work by hand. We automate orders, invoices, reports and follow-ups."
             />
             <ServiceCard
-              icon={<Database className="w-8 h-8" />}
-              head="Full-Stack Engineering"
-              para="From initial architecture to final deployment, we engineer high-performance web applications designed to scale with your vision."
+              icon={<Database className="w-6 h-6" />}
+              head="Management Systems"
+              para="Complete custom systems for clinics, schools, shops and offices: records, billing, staff and reports in one place."
             />
             <ServiceCard
-              icon={<Layers className="w-8 h-8" />}
-              head="MERN Infrastructure"
-              para="End-to-end full-stack development using MongoDB, Express, React, and Node.js with absolute type safety."
+              icon={<Layers className="w-6 h-6" />}
+              head="Ecommerce Stores"
+              para="Fast online stores with product management, payments, order tracking and an admin panel you can run yourself."
             />
             <ServiceCard
-              icon={<Smartphone className="w-8 h-8" />}
-              head="Native Hybrid Deployment"
-              para="Transforming complex web ecosystems into high-performance Android applications with seamless native integration and offline capabilities."
+              icon={<Smartphone className="w-6 h-6" />}
+              head="Web & Mobile Apps"
+              para="Websites and mobile apps built around your business, easy to use and ready to grow with you."
             />
           </div>
-        </div>
-      </section>
-    </MarginWrapper>
+        </motion.div>
+      </MarginWrapper >
+    </section>
   );
 };
 

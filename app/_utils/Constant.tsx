@@ -30,7 +30,7 @@ export const CurrentTime = () => {
 export const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Works', href: '/work' },
-  { name: 'Contact', href: '/' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 

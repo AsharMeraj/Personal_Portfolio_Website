@@ -141,6 +141,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-001",
     title: "JARVIS",
+    slug: "jarvis",
     category: "AGENTIC SYSTEMS",
     description: "A distributed autonomous agent network utilizing Gemini 2.5 for complex task reasoning, multi-step planning, and real-time audio processing.",
     tags: ["Next.js", "Gemini API", "Drizzle", "TypeScript"],
@@ -151,6 +152,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-002",
     title: "Timestore",
+    slug: "timestore",
     category: "ECOMMERCE",
     description: "A high-performance modern e-commerce storefront featuring dynamic product cataloging, secure checkout flows, and responsive design.",
     tags: ["Next.js", "Tailwind CSS", "TypeScript", "Stripe"],
@@ -161,6 +163,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-003",
     title: "QuickChat",
+    slug: "quickchat",
     category: "SERVICE SECTOR", // Changed from SERVICE SECTOR for better clarity
     description: "A high-performance real-time messaging platform utilizing Socket.io for bidirectional communication and low-latency instant data transfer.",
     tags: ["Next.js", "Socket.io", "Tailwind CSS", "TypeScript"],
@@ -171,6 +174,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-004",
     title: "EZCounselling",
+    slug: "ezcounselling",
     category: "MEDICAL SYSTEM",
     description: "Integrated counselling platform facilitating real-time scheduling and secure communication between consultants and clients.",
     tags: ["Next.js", "PostgreSQL", "Tailwind CSS", "Prisma"],
@@ -181,6 +185,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-005",
     title: "MyVitals",
+    slug: "myvitals",
     category: "MEDICAL SYSTEM",
     description: "Health-tech dashboard for real-time vitals monitoring and medical data visualization with high-scale vector optimization.",
     tags: ["React", "TypeScript", "Neon DB", "Inngest"],
@@ -191,6 +196,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-006",
     title: "Digital Clinic",
+    slug: "digital_clinic",
     category: "MEDICAL SYSTEM",
     description: "Health-tech dashboard for real-time vitals monitoring and medical data visualization with high-scale vector optimization.",
     tags: ["React", "TypeScript", "Neon DB", "Inngest"],
@@ -201,6 +207,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-007",
     title: "AIM",
+    slug: "aim",
     category: "AI & EDUCATION",
     description: "Intelligent interview preparation tool using Gemini AI to simulate realistic technical interviews and provide instant feedback.",
     tags: ["Next.js", "Gemini API", "Tailwind CSS", "Clerk"],
@@ -211,6 +218,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-008",
     title: "AI ACADEMY",
+    slug: "ai_academy",
     category: "AI & EDUCATION",
     description: "A comprehensive learning management system (LMS) that leverages AI to personalize course content and track student progress.",
     tags: ["Next.js", "Gemini API", "TypeScript", "Tailwind CSS"],
@@ -221,6 +229,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-009",
     title: "Pest Control",
+    slug: "pest_control",
     category: "SERVICE SECTOR",
     description: "Service management platform designed for lead generation, service booking, and automated customer follow-ups.",
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
@@ -231,6 +240,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-010",
     title: "Dine Market",
+    slug: "dine_market",
     category: "ECOMMERCE",
     description: "A premium fashion and lifestyle marketplace focusing on clean UI/UX and seamless server-side rendered performance.",
     tags: ["Next.js", "Neon DB", "Tailwind CSS", "TypeScript"],
@@ -241,6 +251,7 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-011",
     title: "BusinessGrowth",
+    slug: "businessgrowth",
     category: "SERVICE SECTOR",
     description: "A premium fashion and lifestyle marketplace focusing on clean UI/UX and seamless server-side rendered performance.",
     tags: ["Next.js", "Neon DB", "Tailwind CSS", "TypeScript"],

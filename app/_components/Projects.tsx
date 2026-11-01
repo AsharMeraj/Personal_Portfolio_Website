@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import ProjectCards from './ProjectCards';
@@ -18,16 +18,10 @@ export const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 24, scale: 0.98 },
+    hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-            type: 'spring',
-            stiffness: 260,
-            damping: 20,
-        },
+        transition: { duration: 0.5, ease: 'easeOut' },
     },
 };
 
@@ -35,13 +29,19 @@ const Projects = () => {
     return (
         <section id="projects" className="bg-slate-50/60 text-slate-800 font-sans relative overflow-hidden">
             <MarginWrapper>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+                >
                     {/* TOP SECTION: Header & Call to Action */}
                     <div className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
 
                         {/* Heading & Badge */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             viewport={{ once: true }}
                             className="flex flex-col items-center md:items-start text-center md:text-left"
                         >
@@ -60,8 +60,8 @@ const Projects = () => {
 
                         {/* "View All" Button */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
                             viewport={{ once: true }}
                             className="flex justify-center md:justify-end pb-2"
                         >
@@ -85,7 +85,7 @@ const Projects = () => {
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
-                        whileInView="visible"
+                        animate="visible"
                         viewport={{ once: true, margin: "-50px" }}
                         className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-2"
                     >
@@ -95,8 +95,9 @@ const Projects = () => {
                             </motion.div>
                         ))}
                     </motion.div>
+                </motion.div>
             </MarginWrapper>
-        </section>
+        </section >
     );
 };
 

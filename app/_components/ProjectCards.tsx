@@ -1,27 +1,15 @@
 'use client'
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Project } from '../_utils/types';
 import Link from 'next/link';
 
-const cardVariants: Variants = {
-  hidden: { y: 24, opacity: 0, scale: 0.98 },
-  visible: { 
-    y: 0, 
-    opacity: 1, 
-    scale: 1,
-    transition: { type: "spring", stiffness: 260, damping: 20 }
-  }
-};
-
 export default function ProjectCards({ project }: { project: Project }) {
   return (
-    <motion.div 
-      variants={cardVariants}
-      className="group relative flex flex-col rounded-2xl bg-white border border-blue-100 shadow-xl shadow-blue-500/5 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-200 transition-all duration-300 overflow-hidden"
+    <div 
+      className="group relative flex flex-col rounded-md bg-white border border-blue-100 shadow-xl shadow-blue-100/10 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-200 transition-all duration-300 overflow-hidden"
     >
-      <Link href={`/project/${project.id}`} className="relative block w-full aspect-[16/10] outline-none">
+      <Link href={`/work/${project.slug}`} className="relative block w-full aspect-[16/10] outline-none">
         
         {/* Background Image */}
         <img 
@@ -38,16 +26,16 @@ export default function ProjectCards({ project }: { project: Project }) {
         </div>
 
         {/* Floating Info Bar (Overlays directly on top of the image) */}
-        <div className="absolute bottom-3 left-8 right-8 bg-white/95 backdrop-blur-md px-5 py-2 rounded-[1rem] shadow-sm flex items-center justify-between border border-white transition-colors duration-300 group-hover:border-blue-100 ">
-          <h3 className="text-lg font-extrabold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors truncate">
+        <div className="absolute bottom-3 left-8 right-8 bg-white/95 backdrop-blur-md px-5 py-2 rounded-[1rem] shadow-sm flex items-center justify-center border border-white transition-colors duration-300 group-hover:border-blue-100 ">
+          <h3 className="text-base font-extrabold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors truncate">
             {project.title}
           </h3>
-          <span className="text-xs font-bold text-blue-500 tracking-widest uppercase whitespace-nowrap bg-blue-50 px-2.5 py-1 rounded-md">
+          {/* <span className="text-xs font-bold text-blue-500 tracking-widest uppercase whitespace-nowrap bg-blue-50 px-2.5 py-1 rounded-md">
             {project.category}
-          </span>
+          </span> */}
         </div>
 
       </Link>
-    </motion.div>
+    </div>
   );
 }

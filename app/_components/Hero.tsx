@@ -18,24 +18,23 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 18, scale: 0.98 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 260,
-      damping: 20,
-    },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
 
 const Hero: React.FC = () => {
   return (
-    <section className="text-slate-800 flex items-center justify-center font-sans overflow-hidden bg-slate-50/60 px-6 md:px-8 m-auto pt-45 py-20">
+    <section className="text-slate-800 flex items-center justify-center font-sans overflow-hidden bg-slate-50/60 px-6 md:px-8 m-auto md:pt-40 py-22">
 
-      <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16 max-w-4xl ">
+      <motion.div
+        initial={{ y: 18 }}
+        animate={{ y: 0 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+        className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-16 max-w-4xl "
+      >
 
         {/* LEFT COLUMN: Friendly & Cute Copy */}
         <motion.div
@@ -96,12 +95,12 @@ const Hero: React.FC = () => {
         {/* RIGHT COLUMN: Playful Stacked Cards & Badges */}
         <motion.div
           className="order-1 lg:order-2 relative flex justify-center w-full lg:w-auto"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0}}
+          animate={{ opacity: 1}}
           transition={{ duration: 0.6, type: "spring" }}
         >
           {/* Main Container */}
-          <div className="relative hidden md:block lg:w-[18rem] xl:w-[20rem] group">
+          <div className="relative hidden lg:block lg:w-[18rem] xl:w-[20rem] group">
 
             {/* Playful Tilted Background Card */}
             <div className="absolute inset-0 bg-blue-100/60 rounded-[2.5rem] rotate-[-6deg] origin-bottom-left transition-transform duration-500 group-hover:rotate-[-8deg]" />
@@ -135,7 +134,7 @@ const Hero: React.FC = () => {
           </div>
         </motion.div>
 
-      </div>
+      </motion.div>
     </section>
   );
 };

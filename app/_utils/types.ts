@@ -38,6 +38,7 @@ export interface ServiceCardProps {
 export interface Project {
   id: string;
   title: string;
+  slug: string;
   category: string;
   description: string;
   tags: string[];

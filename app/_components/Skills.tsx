@@ -16,12 +16,10 @@ export const containerVariants: Variants = {
 };
 
 export const itemVariants: Variants = {
-    hidden: { y: 20, opacity: 0, scale: 0.95 },
+    hidden: { opacity: 0 },
     visible: {
-        y: 0,
         opacity: 1,
-        scale: 1,
-        transition: { type: 'spring', stiffness: 260, damping: 20 }
+        transition: { duration: 0.5, ease: 'easeOut' }
     }
 };
 
@@ -29,15 +27,21 @@ const Skills = () => {
     return (
         <section id="skills" className='relative overflow-hidden bg-slate-50/60 text-slate-800 font-sans'>
             <MarginWrapper>
-                <div className='w-full m-auto relative flex flex-col items-center'>
+                <motion.div
+                    className='w-full m-auto relative flex flex-col items-center'
+                    initial={{ y: 20 }}
+                    whileInView={{ y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+                >
 
                     {/* Header Section */}
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-12 mb-14">
 
                         {/* Top Left: Badge & Heading */}
                         <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left"
                         >
@@ -55,8 +59,8 @@ const Skills = () => {
 
                         {/* Top Right: Paragraph */}
                         <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             className="flex-1 lg:pl-10 lg:border-l-2 border-blue-100/50 flex justify-center lg:justify-start"
                         >
@@ -73,7 +77,7 @@ const Skills = () => {
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
+                            viewport={{ once: true }}
                             className='flex-1'
                         >
                             <div className="flex items-center gap-2 mb-6 justify-center lg:justify-start">
@@ -98,7 +102,7 @@ const Skills = () => {
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
+                            viewport={{ once: true }}
                             className='flex-1'
                         >
                             <div className="flex items-center gap-2 mb-6 justify-center lg:justify-start">
@@ -125,7 +129,7 @@ const Skills = () => {
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
+                            viewport={{ once: true }}
                             className='w-full flex flex-wrap justify-center gap-3'
                         >
                             <SkillsCard name='Generative AI Integration' featured />
@@ -137,7 +141,7 @@ const Skills = () => {
                         </motion.main>
                     </div>
 
-                </div>
+                </motion.div>
             </MarginWrapper>
         </section>
     )

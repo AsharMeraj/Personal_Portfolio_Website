@@ -24,7 +24,7 @@ const App: React.FC = () => {
 
         <Skills/>
 
-        <Projects/>
+        {/* <Projects/> */}
 
         <DownloadCV/>
       </main>

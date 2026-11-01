@@ -16,10 +16,10 @@ const ProjectDetail = ({ project }: { project: Project }) => {
     return (
         <section className="min-h-screen bg-slate-50/60 text-slate-800 flex items-center justify-center font-sans overflow-hidden py-20">
             <MarginWrapper>
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 items-start">
 
                     {/* LEFT COLUMN */}
-                    <div className="lg:col-span-2 flex flex-col gap-8 order-2 lg:order-1">
+                    <div className="lg:col-span-2 flex flex-col gap-6 order-2 lg:order-1">
 
                         {/* Badge & Title */}
                         <div className="flex flex-col items-center lg:items-start gap-5 text-center lg:text-left">
@@ -34,7 +34,7 @@ const ProjectDetail = ({ project }: { project: Project }) => {
                         </div>
 
                         {/* Architecture */}
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-5">
                             <div className="flex items-center gap-2 text-blue-600">
                                 <Layers className="w-5 h-5 animate-pulse" />
                                 <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Architecture Class</span>
@@ -45,22 +45,15 @@ const ProjectDetail = ({ project }: { project: Project }) => {
                         </div>
 
                         {/* Tech Stack */}
-                        <div className="flex flex-col gap-4">
-                            <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-                                <Code2 className="w-4 h-4 text-blue-500" />
-                                Built With
-                            </h3>
-                            <div className="flex flex-wrap gap-2">
-                                {project.tags.map((tag) => (
-                                    <span key={tag} className="px-3 py-1.5 bg-white border border-blue-100 rounded-xl text-xs font-bold text-slate-700 shadow-sm">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
+                        <div className="flex flex-wrap gap-2">
+                            {project.tags.map((tag) => (
+                                <span key={tag} className="px-3 py-1.5 bg-white border border-blue-100 rounded-md text-sm font-bold text-slate-700 shadow-sm">
+                                    {tag}
+                                </span>
+                            ))}
                         </div>
-
                         {/* Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-slate-200/80">
+                        <div className="flex flex-col sm:flex-row gap-3 pr-24 border-t border-slate-200/80">
                             <a
                                 href={project.live}
                                 target="_blank"
@@ -83,7 +76,7 @@ const ProjectDetail = ({ project }: { project: Project }) => {
                     </div>
 
                     {/* RIGHT COLUMN */}
-                    <div className="lg:col-span-3 flex flex-col gap-8 order-1 lg:order-2">
+                    <div className="lg:col-span-2 flex flex-col gap-8 order-1 lg:order-2">
 
                         {/* Gallery */}
                         <div className="flex flex-col gap-4">
@@ -115,17 +108,27 @@ const ProjectDetail = ({ project }: { project: Project }) => {
                         </div>
 
                         {/* Technical Summary */}
-                        <div className="flex flex-col gap-4 py-4">
+                        {/* <div className="flex flex-col gap-4 py-4">
                             <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight">Technical Summary</h3>
                             {project.description.map((text, i) => (
                                 <p key={i} className="text-slate-600 text-lg leading-relaxed">
                                     {text}
                                 </p>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>
+                {/* Technical Summary */}
+                <div className="flex flex-col gap-4 pt-8 border-t border-slate-200/80">
+                    <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight">Technical Summary</h3>
+                    {project.description.map((text, i) => (
+                        <p key={i} className="text-slate-600 text-lg leading-relaxed">
+                            {text}
+                        </p>
+                    ))}
+                </div>
+
             </MarginWrapper>
         </section>
     );

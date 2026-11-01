@@ -9,7 +9,7 @@ export default function ProjectCards({ project }: { project: Project }) {
     <div 
       className="group relative flex flex-col rounded-md bg-white border border-blue-100 shadow-xl shadow-blue-100/10 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-200 transition-all duration-300 overflow-hidden"
     >
-      <Link href={`/work/${project.slug}`} className="relative block w-full aspect-[16/10] outline-none">
+      <Link href={`/work/${project.slug}`} scroll={false} className="relative block w-full aspect-[16/10] outline-none">
         
         {/* Background Image */}
         <img 

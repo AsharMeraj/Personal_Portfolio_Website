@@ -40,7 +40,7 @@ export interface Project {
   title: string;
   slug: string;
   category: string;
-  description: string;
+  description: string[];
   tags: string[];
   image: string;
   github?: string;

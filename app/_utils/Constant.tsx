@@ -143,7 +143,11 @@ export const PROJECT: Project[] = [
     title: "JARVIS",
     slug: "jarvis",
     category: "AGENTIC SYSTEMS",
-    description: "A distributed autonomous agent network utilizing Gemini 2.5 for complex task reasoning, multi-step planning, and real-time audio processing.",
+    description: [
+      "JARVIS is an AI assistant built as a network of autonomous agents. Each agent has its own job, and together they work through complex tasks without needing constant instructions. It is powered by Gemini 2.5, which handles the reasoning and decides what should happen next.",
+      "When a task comes in, JARVIS breaks it into smaller steps and plans the order to do them in. The agents pass results to each other as they go, so one request can turn into a full workflow. It also processes audio live, which means you can talk to it and get a spoken style response without waiting for a full page reload.",
+      "The app is built with Next.js and TypeScript, so the interface is fast and the code stays safe and easy to maintain. Drizzle manages the database layer, which keeps conversations and task history stored in a clean, typed way.",
+    ],
     tags: ["Next.js", "Gemini API", "Drizzle", "TypeScript"],
     image: "/jarvis.png",
     github: "#",
@@ -154,18 +158,25 @@ export const PROJECT: Project[] = [
     title: "Timestore",
     slug: "timestore",
     category: "ECOMMERCE",
-    description: "A high-performance modern e-commerce storefront featuring dynamic product cataloging, secure checkout flows, and responsive design.",
+    description: [
+      "Timestore is a full watch store built with Next.js 15 and TypeScript. The home page shows New Arrivals, Showcase, and Featured sections with smooth Framer Motion transitions. Products load from a PostgreSQL database on the server, so pages open fast and the catalog can keep growing.",
+      "Each product has its own page with an image carousel, a size picker, and related products from the same category. The cart runs on Redux Toolkit, keeps track of sizes for every item, and updates totals instantly. At checkout, a server route creates a Stripe session and sends the customer to pay, with separate success and failure pages after that.",
+    ],
     tags: ["Next.js", "Tailwind CSS", "TypeScript", "Stripe"],
     image: "/Timestore.png",
     github: "#",
-    live: "https://time-store.vercel.app/"
+    live: "https://timestore-asharmeraj.vercel.app/"
   },
   {
     id: "PRJ-003",
     title: "QuickChat",
     slug: "quickchat",
-    category: "SERVICE SECTOR", // Changed from SERVICE SECTOR for better clarity
-    description: "A high-performance real-time messaging platform utilizing Socket.io for bidirectional communication and low-latency instant data transfer.",
+    category: "SERVICE SECTOR",
+    description: [
+      "QuickChat is a real-time messaging app where messages show up instantly, without refreshing the page. It uses Socket.io to keep a live connection open between users and the server, so data moves both ways with very little delay.",
+      "Because the connection stays open, the app can handle things like instant delivery, live conversations, and fast updates even when many people are chatting at once. It is built for speed, so the chat feels smooth and responsive.",
+      "The interface is built with Next.js and TypeScript, which keeps the code reliable and easy to grow. Tailwind CSS handles the styling, so the layout stays clean and works well on any screen size.",
+    ],
     tags: ["Next.js", "Socket.io", "Tailwind CSS", "TypeScript"],
     image: "/Quickchat.png",
     github: "#",
@@ -176,7 +187,11 @@ export const PROJECT: Project[] = [
     title: "EZCounselling",
     slug: "ezcounselling",
     category: "MEDICAL SYSTEM",
-    description: "Integrated counselling platform facilitating real-time scheduling and secure communication between consultants and clients.",
+    description: [
+      "EZCounselling is a platform that connects counsellors and clients in one place. Clients can book sessions that fit their schedule, and consultants can manage their availability without back and forth messages.",
+      "Scheduling happens in real time, so open slots are always up to date and double bookings are avoided. Communication between the consultant and the client is kept secure, which matters when the conversations are private.",
+      "The app is built with Next.js and styled with Tailwind CSS for a clean, responsive layout. PostgreSQL stores the data, and Prisma gives the code a typed, reliable way to work with it.",
+    ],
     tags: ["Next.js", "PostgreSQL", "Tailwind CSS", "Prisma"],
     image: "/counselling.png",
     github: "#",
@@ -187,7 +202,11 @@ export const PROJECT: Project[] = [
     title: "MyVitals",
     slug: "myvitals",
     category: "MEDICAL SYSTEM",
-    description: "Health-tech dashboard for real-time vitals monitoring and medical data visualization with high-scale vector optimization.",
+    description: [
+      "MyVitals is a health dashboard that lets people track their vitals in one place. Readings show up in real time, so changes can be spotted as they happen instead of after the fact.",
+      "Medical data is turned into clear charts and visuals, which makes trends easier to read than raw numbers. The system is also optimized to handle large amounts of data without slowing down.",
+      "The frontend is built with React and TypeScript for a reliable, typed codebase. Neon DB stores the data, and Inngest runs background jobs so heavy tasks do not block the interface.",
+    ],
     tags: ["React", "TypeScript", "Neon DB", "Inngest"],
     image: "/myvitals2.png",
     github: "#",
@@ -196,9 +215,13 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-006",
     title: "Digital Clinic",
-    slug: "digital_clinic",
+    slug: "digital-clinic",
     category: "MEDICAL SYSTEM",
-    description: "Health-tech dashboard for real-time vitals monitoring and medical data visualization with high-scale vector optimization.",
+    description: [
+      "Digital Clinic is a complete clinic management system that runs the whole patient journey in one place. Patients register online, and their details are saved so they never have to fill out the same forms twice.",
+      "Once registered, a patient can consult a doctor through the system. The doctor reviews the case, then writes a prescription directly in the app, so there is no paper work and no confusion about what was prescribed.",
+      "Everything is automated, from registration to consultation to prescription, which saves time for both staff and patients. The app is built with React and TypeScript, Neon DB stores the data, and Inngest runs background tasks like notifications and follow ups.",
+    ],
     tags: ["React", "TypeScript", "Neon DB", "Inngest"],
     image: "/digitalclinic.png",
     github: "#",
@@ -209,7 +232,11 @@ export const PROJECT: Project[] = [
     title: "AIM",
     slug: "aim",
     category: "AI & EDUCATION",
-    description: "Intelligent interview preparation tool using Gemini AI to simulate realistic technical interviews and provide instant feedback.",
+    description: [
+      "AIM is an interview practice tool that helps people get ready for real technical interviews. It uses Gemini AI to ask realistic questions, so the session feels close to sitting in front of an actual interviewer.",
+      "After each answer, the user gets instant feedback on what was good and what can be improved. This makes it easy to practice again and again, and see progress without needing another person to help.",
+      "The app is built with Next.js and styled with Tailwind CSS for a clean, responsive layout. Clerk handles sign up and login, so every user has a secure account and their practice sessions stay private.",
+    ],
     tags: ["Next.js", "Gemini API", "Tailwind CSS", "Clerk"],
     image: "/Aim.png",
     github: "#",
@@ -218,9 +245,13 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-008",
     title: "AI ACADEMY",
-    slug: "ai_academy",
+    slug: "ai-academy",
     category: "AI & EDUCATION",
-    description: "A comprehensive learning management system (LMS) that leverages AI to personalize course content and track student progress.",
+    description: [
+      "AI Academy is a learning management system where students can take courses and learn at their own pace. It uses Gemini AI to adjust course content to each student, so the material fits what they need instead of being the same for everyone.",
+      "The platform tracks each student's progress, so they can see what they have finished and what is left. Teachers and learners both get a clear picture of how the learning is going.",
+      "The app is built with Next.js and TypeScript, which keeps the code fast, safe, and easy to maintain. Tailwind CSS handles the styling, so the pages look clean and work well on any device.",
+    ],
     tags: ["Next.js", "Gemini API", "TypeScript", "Tailwind CSS"],
     image: "/AiAcademy.png",
     github: "#",
@@ -229,9 +260,13 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-009",
     title: "Pest Control",
-    slug: "pest_control",
+    slug: "pest-control",
     category: "SERVICE SECTOR",
-    description: "Service management platform designed for lead generation, service booking, and automated customer follow-ups.",
+    description: [
+      "Pest Control is a website and service platform for a pest control company. It helps the business find new customers, and lets visitors book a service in a few clicks without needing to call first.",
+      "After a booking, the system follows up with customers automatically, so no lead is forgotten and no one is left waiting for a reply. This saves the team time and helps turn more enquiries into real jobs.",
+      "The site is built with Next.js and TypeScript for fast pages and reliable code. Tailwind CSS keeps the design clean on every screen, and Framer Motion adds smooth animations that make the site feel polished.",
+    ],
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     image: "/Pestcontrol.png",
     github: "#",
@@ -240,9 +275,13 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-010",
     title: "Dine Market",
-    slug: "dine_market",
+    slug: "dine-market",
     category: "ECOMMERCE",
-    description: "A premium fashion and lifestyle marketplace focusing on clean UI/UX and seamless server-side rendered performance.",
+    description: [
+      "Dine Market is an online marketplace for fashion and lifestyle products. The focus is on a clean, simple design, so shoppers can find what they want and move through the store without any confusion.",
+      "Pages are rendered on the server, so they load quickly and feel smooth, even on slower connections. This also helps the store show up better in search results.",
+      "The app is built with Next.js and TypeScript. Neon DB stores the product data, and Tailwind CSS handles the styling, so the layout stays sharp and responsive on every device.",
+    ],
     tags: ["Next.js", "Neon DB", "Tailwind CSS", "TypeScript"],
     image: "/Dinemarket.png",
     github: "#",
@@ -251,13 +290,17 @@ export const PROJECT: Project[] = [
   {
     id: "PRJ-011",
     title: "BusinessGrowth",
-    slug: "businessgrowth",
+    slug: "business-growth",
     category: "SERVICE SECTOR",
-    description: "A premium fashion and lifestyle marketplace focusing on clean UI/UX and seamless server-side rendered performance.",
+    description: [
+      "BusinessGrowth is a website built to help a business present its services and attract more clients. It has a clear layout that explains what the business offers and makes it easy for visitors to get in touch.",
+      "The design focuses on a clean look and fast loading, so visitors stay on the page and trust what they see.",
+      "The app is built with Next.js and TypeScript. Neon DB stores the data, and Tailwind CSS handles the styling, so the site looks good on every screen size.",
+    ],
     tags: ["Next.js", "Neon DB", "Tailwind CSS", "TypeScript"],
     image: "/businessgrowth.png",
     github: "#",
-    live: "https://dinemarket-blue.vercel.app/"
+    live: "https://businessgrowth-url-here.vercel.app/"
   },
 ];
 

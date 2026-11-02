@@ -81,7 +81,7 @@ const Projects = () => {
 
                     </div>
 
-                    {/* PROJECT CARDS GRID */}
+                    {/* PROJECT CARDS GRID  */}
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"

@@ -5,6 +5,7 @@ import { ArrowRight, Mail, Sparkles, Coffee, Code2, Heart } from 'lucide-react';
 import Image from 'next/image';
 import Pic from '@/public/Pic5.png';
 import MarginWrapper from './MarginWrapper';
+import Link from "next/link"
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -24,6 +25,8 @@ const itemVariants: Variants = {
     transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
+
+const MotionLink = motion.create(Link);
 
 const Hero: React.FC = () => {
   return (
@@ -79,8 +82,9 @@ const Hero: React.FC = () => {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </motion.a>
 
-            <motion.a
+            <MotionLink
               href="/contact"
+              scroll={false}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -88,7 +92,7 @@ const Hero: React.FC = () => {
             >
               <Mail className="w-4 h-4 text-blue-500" />
               <span>Say Hello</span>
-            </motion.a>
+            </MotionLink>
           </motion.div>
         </motion.div>
 

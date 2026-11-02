@@ -13,7 +13,7 @@ export default function ProjectCards({ project }: { project: Project }) {
         
         {/* Background Image */}
         <img 
-          src={project.image} 
+          src={project.images[0]} 
           alt={project.title} 
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />

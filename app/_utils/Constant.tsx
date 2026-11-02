@@ -149,8 +149,8 @@ export const PROJECT: Project[] = [
       "The app is built with Next.js and TypeScript, so the interface is fast and the code stays safe and easy to maintain. Drizzle manages the database layer, which keeps conversations and task history stored in a clean, typed way.",
     ],
     tags: ["Next.js", "Gemini API", "Drizzle", "TypeScript"],
-    image: "/jarvis.png",
-    github: "#",
+    images: ["/jarvis3.png", "/jarvis.png", "/jarvis2.png"],
+    github: "https://github.com/AsharMeraj/JARVIS",
     live: "https://jarvis-asharmeraj.vercel.app"
   },
   {
@@ -163,8 +163,8 @@ export const PROJECT: Project[] = [
       "Each product has its own page with an image carousel, a size picker, and related products from the same category. The cart runs on Redux Toolkit, keeps track of sizes for every item, and updates totals instantly. At checkout, a server route creates a Stripe session and sends the customer to pay, with separate success and failure pages after that.",
     ],
     tags: ["Next.js", "Tailwind CSS", "TypeScript", "Stripe"],
-    image: "/Timestore.png",
-    github: "#",
+    images: ["/timestore.png", "/timestore2.png", "/timestore3.png"],
+    github: "https://github.com/AsharMeraj/TimeStorev2.0",
     live: "https://timestore-asharmeraj.vercel.app/"
   },
   {
@@ -177,9 +177,9 @@ export const PROJECT: Project[] = [
       "Because the connection stays open, the app can handle things like instant delivery, live conversations, and fast updates even when many people are chatting at once. It is built for speed, so the chat feels smooth and responsive.",
       "The interface is built with Next.js and TypeScript, which keeps the code reliable and easy to grow. Tailwind CSS handles the styling, so the layout stays clean and works well on any screen size.",
     ],
-    tags: ["Next.js", "Socket.io", "Tailwind CSS", "TypeScript"],
-    image: "/Quickchat.png",
-    github: "#",
+    tags: ["Next.js", "Socket.io", "Tailwind CSS", "TypeScript", "MongoDB"],
+    images: ["/quickchat.png", "/quickchat2.png", "/quickchat3.png"],
+    github: "https://github.com/AsharMeraj/REAL_TIME_CHAT_APP",
     live: "https://quickchat-asharmeraj.vercel.app/"
   },
   {
@@ -192,9 +192,9 @@ export const PROJECT: Project[] = [
       "Scheduling happens in real time, so open slots are always up to date and double bookings are avoided. Communication between the consultant and the client is kept secure, which matters when the conversations are private.",
       "The app is built with Next.js and styled with Tailwind CSS for a clean, responsive layout. PostgreSQL stores the data, and Prisma gives the code a typed, reliable way to work with it.",
     ],
-    tags: ["Next.js", "PostgreSQL", "Tailwind CSS", "Prisma"],
-    image: "/counselling.png",
-    github: "#",
+    tags: ["Next.js", "PostgreSQL", "Tailwind CSS", "Drizzle", "Neon"],
+    images: ["/counselling.png", "/counselling2.png", "/counselling3.png"],
+    github: "https://github.com/AsharMeraj/Counselling_App_Jublee",
     live: "https://counselling-app-scree-git-352ccb-ashar-merajs-projects-60e64089.vercel.app/"
   },
   {
@@ -208,24 +208,24 @@ export const PROJECT: Project[] = [
       "The frontend is built with React and TypeScript for a reliable, typed codebase. Neon DB stores the data, and Inngest runs background jobs so heavy tasks do not block the interface.",
     ],
     tags: ["React", "TypeScript", "Neon DB", "Inngest"],
-    image: "/myvitals2.png",
+    images: ["/myvitals.png", "/myvitals2.png"],
     github: "#",
     live: "#"
   },
   {
     id: "PRJ-006",
-    title: "Digital Clinic",
-    slug: "digital-clinic",
+    title: "Caresync",
+    slug: "caresync",
     category: "MEDICAL SYSTEM",
     description: [
-      "Digital Clinic is a complete clinic management system that runs the whole patient journey in one place. Patients register online, and their details are saved so they never have to fill out the same forms twice.",
+      "Caresync is a complete clinic management system that runs the whole patient journey in one place. Patients register online, and their details are saved so they never have to fill out the same forms twice.",
       "Once registered, a patient can consult a doctor through the system. The doctor reviews the case, then writes a prescription directly in the app, so there is no paper work and no confusion about what was prescribed.",
       "Everything is automated, from registration to consultation to prescription, which saves time for both staff and patients. The app is built with React and TypeScript, Neon DB stores the data, and Inngest runs background tasks like notifications and follow ups.",
     ],
     tags: ["React", "TypeScript", "Neon DB", "Inngest"],
-    image: "/digitalclinic.png",
+    images: ["/caresync.png", "/caresync2.png", "/caresync3.png"],
     github: "#",
-    live: "#"
+    live: "https://caresync-clinic-frontend.vercel.app/"
   },
   {
     id: "PRJ-007",
@@ -238,8 +238,8 @@ export const PROJECT: Project[] = [
       "The app is built with Next.js and styled with Tailwind CSS for a clean, responsive layout. Clerk handles sign up and login, so every user has a secure account and their practice sessions stay private.",
     ],
     tags: ["Next.js", "Gemini API", "Tailwind CSS", "Clerk"],
-    image: "/Aim.png",
-    github: "#",
+    images: ["/aim.png", "/aim2.png", "/aim3.png"],
+    github: "https://github.com/AsharMeraj/AI-Interview-Mocker",
     live: "https://ai-interview-mocker-aim.vercel.app/"
   },
   {
@@ -253,8 +253,8 @@ export const PROJECT: Project[] = [
       "The app is built with Next.js and TypeScript, which keeps the code fast, safe, and easy to maintain. Tailwind CSS handles the styling, so the pages look clean and work well on any device.",
     ],
     tags: ["Next.js", "Gemini API", "TypeScript", "Tailwind CSS"],
-    image: "/AiAcademy.png",
-    github: "#",
+    images: ["/aiacademy.png", "/aiacademy2.png", "/aiacademy3.png"],
+    github: "https://github.com/AsharMeraj/AI-Academy",
     live: "https://asharmeraj-ai-academy.vercel.app/"
   },
   {
@@ -268,8 +268,8 @@ export const PROJECT: Project[] = [
       "The site is built with Next.js and TypeScript for fast pages and reliable code. Tailwind CSS keeps the design clean on every screen, and Framer Motion adds smooth animations that make the site feel polished.",
     ],
     tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-    image: "/Pestcontrol.png",
-    github: "#",
+    images: ["/pestcontrol.png", "/pestcontrol2.png", "/pestcontrol3.png"],
+    github: "https://github.com/AsharMeraj/American-Hitec-Pest-Control",
     live: "https://americanhitecpestcontrol-asharmeraj.vercel.app/"
   },
   {
@@ -283,8 +283,8 @@ export const PROJECT: Project[] = [
       "The app is built with Next.js and TypeScript. Neon DB stores the product data, and Tailwind CSS handles the styling, so the layout stays sharp and responsive on every device.",
     ],
     tags: ["Next.js", "Neon DB", "Tailwind CSS", "TypeScript"],
-    image: "/Dinemarket.png",
-    github: "#",
+    images: ["/dinemarket.png", "/dinemarket2.png", "/dinemarket3.png"],
+    github: "https://github.com/AsharMeraj/Dine-Market",
     live: "https://dinemarket-blue.vercel.app/"
   },
   {
@@ -298,9 +298,9 @@ export const PROJECT: Project[] = [
       "The app is built with Next.js and TypeScript. Neon DB stores the data, and Tailwind CSS handles the styling, so the site looks good on every screen size.",
     ],
     tags: ["Next.js", "Neon DB", "Tailwind CSS", "TypeScript"],
-    image: "/businessgrowth.png",
-    github: "#",
-    live: "https://businessgrowth-url-here.vercel.app/"
+    images: ["/businessgrowth.png", "/businessgrowth2.png", "/businessgrowth2.png"],
+    github: "https://github.com/AsharMeraj/React-Typescript-App",
+    live: "https://asharmeraj.github.io/React-Typescript-App/"
   },
 ];
 

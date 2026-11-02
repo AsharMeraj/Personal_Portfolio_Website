@@ -42,7 +42,7 @@ export interface Project {
   category: string;
   description: string[];
   tags: string[];
-  image: string;
+  images: string[];
   github?: string;
   live?: string;
 }

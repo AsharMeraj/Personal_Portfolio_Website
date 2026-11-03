@@ -63,7 +63,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <h2 className="xs:text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Let&apos;s start a <br className="hidden lg:block" />
                 <span className="text-blue-600">Conversation</span>.
               </h2>

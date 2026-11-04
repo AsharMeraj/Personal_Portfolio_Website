@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 
 export const SEO: Record<string, Metadata> = {
-  services: {
-    title: "Services",
-    description:
-      "Backend development, custom systems, and web applications by Muhammad Ashar.",
-    alternates: { canonical: "/services" },
-  },
   work: {
     title: "Work",
     description:

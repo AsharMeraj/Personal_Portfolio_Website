@@ -4,7 +4,7 @@ import { PROJECT } from "./_utils/Constant";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://muhammadashar.vercel.app";
 
-  const pages = ["", "/about", "/services", "/work", "/contact"].map((path) => ({
+  const pages = ["", "/work", "/contact"].map((path) => ({
     url: base + path,
     lastModified: new Date(),
   }));

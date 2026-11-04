@@ -16,8 +16,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MuhammadAshar",
-  description: "I am a Software Engineer",
+  metadataBase: new URL("https://muhammadashar.vercel.app"),
+  title: {
+    default: "Muhammad Ashar - Software Engineer",
+    template: "%s | Muhammad Ashar",
+  },
+  description:
+    "Muhammad Ashar is a software engineer specializing in backend and complex systems.",
+  verification: {
+    google: "PASTE_CONTENT_VALUE_HERE",
+  },
 };
 
 export default function RootLayout({

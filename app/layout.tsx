@@ -23,9 +23,6 @@ export const metadata: Metadata = {
   },
   description:
     "Muhammad Ashar is a software engineer specializing in backend and complex systems.",
-  verification: {
-    google: "PASTE_CONTENT_VALUE_HERE",
-  },
 };
 
 export default function RootLayout({

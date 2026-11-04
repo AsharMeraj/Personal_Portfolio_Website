@@ -22,20 +22,20 @@ export const metadata: Metadata = {
     template: "%s | Muhammad Ashar",
   },
   description:
-    "Muhammad Ashar is a software engineer specializing in backend and complex systems.",
+    "I am a software engineer specializing in backend and complex systems.",
   openGraph: {
     type: "website",
     url: "/",
     siteName: "Muhammad Ashar",
     title: "Muhammad Ashar - Software Engineer",
     description:
-      "Muhammad Ashar is a software engineer specializing in backend and complex systems.",
+      "I am a software engineer specializing in backend and complex systems.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Muhammad Ashar - Software Engineer",
     description:
-      "Muhammad Ashar is a software engineer specializing in backend and complex systems.",
+      "I am a software engineer specializing in backend and complex systems.",
   },
   robots: { index: true, follow: true },
 };

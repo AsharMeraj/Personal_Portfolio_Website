@@ -23,6 +23,34 @@ export const metadata: Metadata = {
   },
   description:
     "Muhammad Ashar is a software engineer specializing in backend and complex systems.",
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Muhammad Ashar",
+    title: "Muhammad Ashar - Software Engineer",
+    description:
+      "Muhammad Ashar is a software engineer specializing in backend and complex systems.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muhammad Ashar - Software Engineer",
+    description:
+      "Muhammad Ashar is a software engineer specializing in backend and complex systems.",
+  },
+  robots: { index: true, follow: true },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Muhammad Ashar",
+  url: "https://muhammadashar.vercel.app",
+  jobTitle: "Software Engineer",
+  address: { "@type": "PostalAddress", addressLocality: "Karachi", addressCountry: "PK" },
+  sameAs: [
+    "https://github.com/AsharMeraj",
+    "https://www.linkedin.com/in/muhammad-ashar-244059273",
+  ],
 };
 
 export default function RootLayout({
@@ -35,6 +63,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <main className="relative isolate min-h-screen m-auto bg-slate-50">
           <div
             className="absolute inset-0 -z-10 pointer-events-none"

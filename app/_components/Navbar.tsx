@@ -3,7 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Code2, Sparkles } from 'lucide-react';
 import { navLinks } from '../_utils/Constant';
+import logo from '@/public/logo.png'
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const Navbar: React.FC = () => {
@@ -23,9 +25,8 @@ const Navbar: React.FC = () => {
           scroll={false}
           className="flex items-center space-x-2.5 cursor-pointer group"
         >
-          <div className="bg-blue-500 p-2 rounded-full text-white shadow-sm shadow-blue-500/20">
-            <Code2 className="w-4 h-4" />
-          </div>
+          <Image src={logo} alt='logo' className="w-8 rounded-full shadow-sm shadow-blue-500/20"/>
+            
           <span className="text-slate-800 font-extrabold text-base tracking-tight font-sans hidden sm:block">
             Muhammad Ashar
           </span>
